@@ -17,12 +17,20 @@ myBoard.on("ready" , function() {
 });
 
 // Listen to the web socket connection
-  io.on('connection', function(client) {
-    client.on('join', function(handshake) {
-      console.log(handshake);
-    });
-  });
+  // io.on('connection', function(client) {
+  //   client.on('join', function(handshake) {
+  //     console.log(handshake);
+  //   });
+  // });
 
+  // io.on('connection', function(socket) {
+  //     socket.on('new message', function(message){
+  //         io.emit('new message', message);
+  //     });
+  //     console.log('Someone has entered the chat room!');
+  // });
+
+//express server listening on port
 app.listen(port, function (){
   console.log("Listening on port ", port);
 });
