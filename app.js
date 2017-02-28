@@ -1,8 +1,11 @@
 'use strict';
 
-var five = require('johnny-five');
-var express = require('express');
-var app = express();
+const five = require('johnny-five');
+const express = require('express');
+const app = express();
+var port = process.env.PORT || 3000;
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 var myBoard;
 
 myBoard = new five.Board();
@@ -13,6 +16,13 @@ myBoard.on("ready" , function() {
   console.log("Arduino is ready!");
 });
 
-app.listen('3000', function (){
-  console.log("Listening on port ", 3000);
+// Listen to the web socket connection
+  io.on('connection', function(client) {
+    client.on('join', function(handshake) {
+      console.log(handshake);
+    });
+  });
+
+app.listen(port, function (){
+  console.log("Listening on port ", port);
 });
