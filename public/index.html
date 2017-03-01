@@ -1,33 +1,19 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Shine</title>
   </head>
-  <body>
-    <h1>She's ALLLLIIIIVVVVEEE!!!!</h1>
-  </body>
-</html> -->
-
-<!--testing with sockets-->
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Arduino</title>
-    </head>
     <body>
-        <h3>Buzzer1:</h3>
-        <input id = "buzzer1" type="range" min="0" max="255" step="1" value="0">
-        <h1>Buzzer1</h1>
+        <h3>Turn On:</h3>
+        <!-- <input id = "buzzer1" type="range" min="0" max="255" step="1" value="0"> -->
+        <button id = "on" type = "button">On</button>
 
-        <h3>Buzzer2:</h3>
-        <input id="buzzer2" type="range" min="0" max="255" step="1" value="0">
+        <h3>Turn Off:</h3>
+        <!-- <input id="buzzer2" type="range" min="0" max="255" step="1" value="0"> -->
+        <button id = "off" type = "button">Off</button>
 
-
-                <!-- include the client socket library-->
-                <script src="/socket.io/socket.io.js"></script>
-
-                <script src="../js/client.js"></script>
+      <script src="../js/client.js"></script>
     </body>
 
 </html>
