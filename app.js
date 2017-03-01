@@ -47,9 +47,13 @@ myBoard.on("ready" , function() {
       myBoard.wait(null, function() {
         // buzzer1.pulse(1000);
       });
+
+      //buzzer2
       myBoard.wait(1000, function() {
         // buzzer2.pulse(1000);
       });
+
+      //turn off buzzer after 10 seconds
       myBoard.wait(10000, function() {
         buzzer1.stop().off();
         buzzer2.stop().off();
