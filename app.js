@@ -48,6 +48,9 @@ myBoard.on("ready" , function() {
         // buzzer1.pulse(1000);
         // buzzer1.stop().off();
       });
+      myBoard.wait(1000, function() {
+        // buzzer2.pulse(1000);
+      });
     }
 
     //call buzzerOn() function
