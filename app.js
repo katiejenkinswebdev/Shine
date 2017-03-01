@@ -25,8 +25,18 @@ app.get('/', function(req, res, next) {
 
 myBoard.on("ready" , function() {
   console.log("Arduino is ready!");
-  var led = new five.Led(13);
-    led.blink(500);
+  // led initial test
+  // var led = new five.Led(13);
+  //   led.blink(500);
+
+  let buzz1 = new five.Led(3);
+
+    buzz1.pulse();
+
+    this.wait(1000, function() {
+      buzz1.stop().off();
+    });
+  });
 
 //
 //   //initial state for buzzers
@@ -81,7 +91,7 @@ myBoard.on("ready" , function() {
 //     //turn on the buzzers
 //     buzzers.on();
 //   }); //end of io.on sockets
-}); //end of myBoard.on
+// }); //end of myBoard.on
 
 //express server listening on port
 app.listen(port, function (){
