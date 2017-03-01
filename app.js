@@ -32,10 +32,12 @@ myBoard.on("ready" , function() {
   let buzzer1 = new five.Led(3);
   let buzzer2 = new five.Led(6);
 
+    //controls length of time for buzzers to pulse
     buzzer1.pulse(1000);
     buzzer2.pulse(1000);
 
-    this.wait(2000, function() {
+    //first argument controls time for buzzers to pulse
+    this.wait(10000, function() {
       buzzer1.stop().off();
       buzzer2.stop().off();
     });
