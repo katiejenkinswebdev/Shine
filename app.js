@@ -31,9 +31,9 @@ myBoard.on("ready" , function() {
 
   let buzz1 = new five.Led(3);
 
-    buzz1.pulse();
+    buzz1.pulse(1000)
 
-    this.wait(1000, function() {
+    this.wait(2000, function() {
       buzz1.stop().off();
     });
   });
