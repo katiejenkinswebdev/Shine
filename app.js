@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 var port = process.env.PORT || 3000;
 const server = require('http').Server(app);
-const io = require('socket.io')(server);
+// const io = require('socket.io')(server);
 var myBoard;
 
 myBoard = new five.Board();
@@ -17,11 +17,6 @@ myBoard.on("ready" , function() {
 });
 
 // Listen to the web socket connection
-  // io.on('connection', function(client) {
-  //   client.on('join', function(handshake) {
-  //     console.log(handshake);
-  //   });
-  // });
 
   // io.on('connection', function(socket) {
   //     socket.on('new message', function(message){
@@ -32,5 +27,5 @@ myBoard.on("ready" , function() {
 
 //express server listening on port
 app.listen(port, function (){
-  console.log("Listening on port ", port);
+  console.log("Listening on port", port);
 });
