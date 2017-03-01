@@ -46,15 +46,29 @@ myBoard.on("ready" , function() {
       //buzzer1
       myBoard.wait(null, function() {
         // buzzer1.pulse(1000);
-        // buzzer1.stop().off();
       });
       myBoard.wait(1000, function() {
         // buzzer2.pulse(1000);
+      });
+      myBoard.wait(10000, function() {
+        buzzer1.stop().off();
+        buzzer2.stop().off();
       });
     }
 
     //call buzzerOn() function
     buzzerOn();
+
+    function buzzerOff(){
+      myBoard.wait(10000, function(){
+        buzzer1.stop(1000).off();
+        buzzer2.stop(1000).off();
+      });
+    }
+
+    // buzzerOff();
+
+
 
 
     //test this loop
