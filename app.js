@@ -54,6 +54,7 @@ myBoard.on("ready" , function() {
 
     //set initial state
     setBuzzState(state);
+    console.log(state);
 
     //every time an event is sent, listen to it & grab new value for each individual buzzer
 
