@@ -60,32 +60,18 @@ myBoard.on("ready" , function() {
       });
     }
 
-    //call buzzerOn() function
+    //invoke buzzerOn() function
     buzzerOn();
 
     function buzzerOff(){
       myBoard.wait(10000, function(){
-        buzzer1.stop(1000).off();
-        buzzer2.stop(1000).off();
+        buzzer1.stop().off();
+        buzzer2.stop().off();
       });
     }
 
-    // buzzerOff();
-
-
-
-
-    //test this loop
-    // this.loop(1000, function() {
-    //   buzzer1.pulse(1000);
-    //   buzzer2.stop(1000);
-    // });
-
-    //buzzer2
-    // this.wait(1000, function() {
-    //   // buzzer2.pulse(1000);
-    //   // buzzer2.stop().off();
-    // });
+    //invoke buzzerOff() function
+    buzzerOff();
   });
 
 //
