@@ -29,12 +29,15 @@ myBoard.on("ready" , function() {
   // var led = new five.Led(13);
   //   led.blink(500);
 
-  let buzz1 = new five.Led(3);
+  let buzzer1 = new five.Led(3);
+  let buzzer2 = new five.Led(6);
 
-    buzz1.pulse(1000)
+    buzzer1.pulse(1000);
+    buzzer2.pulse(1000);
 
     this.wait(2000, function() {
-      buzz1.stop().off();
+      buzzer1.stop().off();
+      buzzer2.stop().off();
     });
   });
 
