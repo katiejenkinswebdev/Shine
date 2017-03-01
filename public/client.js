@@ -7,9 +7,9 @@
     console.log(buzzer1);
     var buzzer2 = document.getElementById('buzzer2');
 
-    // buzzer1.addEventListener("change" , function() {
-      // console.log("You adjusted buzzer1");
-    // });
+    buzzer1.addEventListener("change" , function() {
+      console.log("You adjusted buzzer1");
+    });
 
     // console.log(buzzer1.addEventListener('change', emitValue.bind(null, 100)));
     // buzzer2.addEventListener('change', emitValue.bind(null, 100));
