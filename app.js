@@ -42,11 +42,17 @@ myBoard.on("ready" , function() {
     //   buzzer2.stop().off();
     // });
 
-    //buzzer1
-    this.wait(null, function() {
-      // buzzer1.pulse(1000);
-      // buzzer1.stop().off();
-    });
+    function buzzerOn(){
+      //buzzer1
+      myBoard.wait(null, function() {
+        // buzzer1.pulse(1000);
+        // buzzer1.stop().off();
+      });
+    }
+
+    //call buzzerOn() function
+    buzzerOn();
+
 
     //test this loop
     // this.loop(1000, function() {
@@ -55,10 +61,10 @@ myBoard.on("ready" , function() {
     // });
 
     //buzzer2
-    this.wait(1000, function() {
-      // buzzer2.pulse(1000);
-      // buzzer2.stop().off();
-    });
+    // this.wait(1000, function() {
+    //   // buzzer2.pulse(1000);
+    //   // buzzer2.stop().off();
+    // });
   });
 
 //
