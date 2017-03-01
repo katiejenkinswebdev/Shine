@@ -33,13 +33,31 @@ myBoard.on("ready" , function() {
   let buzzer2 = new five.Led(6);
 
     //controls length of time for buzzers to pulse
-    buzzer1.pulse(1000);
-    buzzer2.pulse(1000);
+    // buzzer1.pulse(1000);
+    // buzzer2.pulse(1000);
 
     //first argument controls time for buzzers to pulse
-    this.wait(10000, function() {
-      buzzer1.stop().off();
-      buzzer2.stop().off();
+    // this.wait(10000, function() {
+    //   buzzer1.stop().off();
+    //   buzzer2.stop().off();
+    // });
+
+    //buzzer1
+    this.wait(null, function() {
+      // buzzer1.pulse(1000);
+      // buzzer1.stop().off();
+    });
+
+    //test this loop
+    // this.loop(1000, function() {
+    //   buzzer1.pulse(1000);
+    //   buzzer2.stop(1000);
+    // });
+
+    //buzzer2
+    this.wait(1000, function() {
+      // buzzer2.pulse(1000);
+      // buzzer2.stop().off();
     });
   });
 
