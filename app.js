@@ -12,9 +12,11 @@ let myBoard = new five.Board();
 app.use(express.static(__dirname + '/public'));
 
 app.get('/app.js', function (req, res){
-  //response would be function buzzerOn();
-  console.log("Get request working!");
-  res.send("get request working!");
+  //call function within here
+  // buzzerOn();
+  console.log("Get request working - terminal!");
+  // console.log(res.send());
+  res.send("get request working - console!");
 });
 
   myBoard.on("ready" , function() {
