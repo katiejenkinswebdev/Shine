@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.14.1",
     "johnny-five": "^0.10.6",
+    "pubnub": "^3.15.2",
     "socket-io": "^1.0.0"
   },
   "devDependencies": {},

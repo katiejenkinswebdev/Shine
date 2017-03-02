@@ -19,89 +19,124 @@ app.get('/app.js', function (req, res){
   // res.send(buzzerOn());
 });
 
-  //constructor function to create new board
-  function BoardController(myBoard){
-    this.myBoard = myBoard;
+///////PUBNUB TESTING/////////
 
-    this.boardOn =
-      myBoard.on("ready" , function() {
-      console.log("Arduino is ready!");
-      this.buzzer1 = new five.Led(3);
-      // this.buzzer2 = new five.Led(6);
-      });
+var pubnub = require('pubnub').init({
+  publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887', // Use your pub key
+  subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f' // Use your sub key
+});
 
-    // this.buzzer1 = myBoard.buzzer1;
-    // this.buzzer1 = new five.Led(3);
-    // this.myBoardOn.buzzer2 = new five.Led(6);
+var channel = 'led';
 
-    // this.buzzerOn =
-    //   function buzzerOn(){
-    //     //buzzer1
-    //     myBoard.wait(null, function() {
-    //       // pulse for 1 second
-    //       this.buzzer1.pulse(1000);
-    //     });
-    //
-    //     //buzzer2
-    //     myBoard.wait(1000, function() {
-    //       //pulse for 1 second
-    //       // this.buzzer2.pulse(1000);
-    //     });
-    //
-    //     //turn off buzzer after 10 seconds
-    //     myBoard.wait(10000, function() {
-    //       this.buzzer1.stop().off();
-    //       // this.buzzer2.stop().off();
-    //     });
-    //   };
-  }
+myBoard.on('ready', function() {
+  var led = new five.Led(13); // pin 13
 
-  myBoard = new BoardController (myBoard);
+  pubnub.subscribe({
+    channel: channel,
+    message: function(m) {
+      if(m.blink === true) {
+        led.blink(500);
+      } else {
+        led.stop();
+        led.off();
+      }
+    },
+    error: function(err) {console.log(err);}
+  });
 
-  // this.boardOn();
-  // myBoard.buzzerOn();
+});
 
-  //previous code before constructor
-  // myBoard.on("ready" , function() {
-  //   console.log("Arduino is ready!");
+
+/////////TESTING/////////
+  // //constructor function to create new board
+  // function BoardController(myBoard){
+  //   this.myBoard = myBoard;
   //
-  //   let buzzer1 = new five.Led(3);
-  //   let buzzer2 = new five.Led(6);
+  //   this.boardOn =
+  //     myBoard.on("ready" , function() {
+  //       console.log("Arduino is ready!");
+  //       //must define buzzer here
+  //       let buzzer1 = new five.Led(3);
+  //       // this.buzzer1 = new five.Led(3);
+  //       // let buzzer2 = new five.Led(6);
+  //     });
   //
+  //   // this.buzzer1 = new five.Led(3);
+  //   // this.boardOn.buzzer1 = buzzer1;
+  //   // this.myBoardOn.buzzer2 = new five.Led(6);
+  //
+  //   this.buzzerOn =
   //     function buzzerOn(){
+  //
   //       //buzzer1
   //       myBoard.wait(null, function() {
   //         // pulse for 1 second
-  //         // buzzer1.pulse(1000);
+  //         this.buzzer1.pulse(1000);
+  //         // myBoard.this.buzzer1.pulse(1000);
+  //         // myBoard.buzzer1.pulse(1000);
   //       });
+  //   //
+  //   //     //buzzer2
+  //   //     myBoard.wait(1000, function() {
+  //   //       //pulse for 1 second
+  //   //       // this.buzzer2.pulse(1000);
+  //   //     });
+  //   //
+  //   //     //turn off buzzer after 10 seconds
+  //   //     myBoard.wait(10000, function() {
+  //   //       this.buzzer1.stop().off();
+  //   //       // this.buzzer2.stop().off();
+  //   //     });
+  //     };
+  // }
   //
-  //       //buzzer2
-  //       myBoard.wait(1000, function() {
-  //         //pulse for 1 second
-  //         // buzzer2.pulse(1000);
-  //       });
+  // myBoard = new BoardController (myBoard);
   //
-  //       //turn off buzzer after 10 seconds
-  //       myBoard.wait(10000, function() {
-  //         buzzer1.stop().off();
-  //         buzzer2.stop().off();
-  //       });
-  //     }
+  // // this.boardOn();
+  // myBoard.boardOn();
+  // myBoard.buzzerOn();
   //
-  //     //turn on Buzzer
-  //     buzzerOn();
-  //
-  //     function buzzerOff(){
-  //       myBoard.wait(10000, function(){
-  //         buzzer1.stop().off();
-  //         buzzer2.stop().off();
-  //       });
-  //     }
-  //
-  //     //turn off Buzzer
-  //     buzzerOff();
-  //
-  //   });//end of myBoard
+  // //previous code before constructor
+  // // myBoard.on("ready" , function() {
+  // //   console.log("Arduino is ready!");
+  // //
+  // //   let buzzer1 = new five.Led(3);
+  // //   let buzzer2 = new five.Led(6);
+  // //
+  // //     function buzzerOn(){
+  // //       //buzzer1
+  // //       myBoard.wait(null, function() {
+  // //         // pulse for 1 second
+  // //         // buzzer1.pulse(1000);
+  // //       });
+  // //
+  // //       //buzzer2
+  // //       myBoard.wait(1000, function() {
+  // //         //pulse for 1 second
+  // //         // buzzer2.pulse(1000);
+  // //       });
+  // //
+  // //       //turn off buzzer after 10 seconds
+  // //       myBoard.wait(10000, function() {
+  // //         buzzer1.stop().off();
+  // //         buzzer2.stop().off();
+  // //       });
+  // //     }
+  // //
+  // //     //turn on Buzzer
+  // //     buzzerOn();
+  // //
+  // //     function buzzerOff(){
+  // //       myBoard.wait(10000, function(){
+  // //         buzzer1.stop().off();
+  // //         buzzer2.stop().off();
+  // //       });
+  // //     }
+  // //
+  // //     //turn off Buzzer
+  // //     buzzerOff();
+  // //
+  // //   });//end of myBoard
 
 //express server listening on port
 app.listen(port, function (){
