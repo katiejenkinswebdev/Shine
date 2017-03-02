@@ -6,14 +6,13 @@ const app = express();
 const env = require('dotenv').config();
 let port = process.env.PORT || 3000;
 
-
 //johnny-five setup
 const five = require('johnny-five');
 let myBoard = new five.Board();
 
 app.use(express.static(__dirname + '/public'));
 
-///////PUBNUB/////////
+//pubnub setup
 var pubnub = require('pubnub').init({
   publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
   subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f',
