@@ -47,7 +47,6 @@ myBoard.on('ready', function() {
     error: function(err)
     {console.log(err);}
   });
-
 });
 
 //express server listening on port

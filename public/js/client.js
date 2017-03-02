@@ -29,7 +29,7 @@ pubnub.subscribe({
 
 /*
 Upon a button click, publish the data.
-Arduino will subscribe it and blink LED
+Arduino will subscribe it and turn on buzzers
 */
 button.addEventListener('click', function(e) {
   pubnub.publish({
