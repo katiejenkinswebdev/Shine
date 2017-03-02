@@ -3,7 +3,9 @@
 //express server setup
 const express = require('express');
 const app = express();
+const env = require('dotenv').config();
 let port = process.env.PORT || 3000;
+
 
 //johnny-five setup
 const five = require('johnny-five');
