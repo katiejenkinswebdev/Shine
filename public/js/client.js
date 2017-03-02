@@ -10,7 +10,12 @@
 
     on.addEventListener("click" , function() {
       console.log("You clicked on!");
+      $.get('/');
     });
+
+    function getBuzzerOn(){
+      console.log('click for getBuzzerOn working!');
+    }
 
     off.addEventListener("click" , function() {
       console.log("You clicked off!");

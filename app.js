@@ -3,15 +3,19 @@
 //express server setup
 const express = require('express');
 const app = express();
-var port = process.env.PORT || 3000;
+let port = process.env.PORT || 3000;
 
 //johnny-five setup
 const five = require('johnny-five');
-var myBoard = new five.Board();
+let myBoard = new five.Board();
 
 app.use(express.static(__dirname + '/public'));
 
-
+app.get('/', function (req, res){
+  //response would be function buzzerOn();
+  console.log("Get request working!");
+  res.send("get request working!");
+}); 
 
   myBoard.on("ready" , function() {
     console.log("Arduino is ready!");
