@@ -27,8 +27,12 @@ myBoard.on('ready', function() {
     channel: channel,
     message: function(m) {
       if(m.blink === true) {
-        buzzer1.blink(500);
-        buzzer2.blink(500);
+        myBoard.wait(null, function(){
+          buzzer1.pulse(750);
+        });
+        myBoard.wait(750, function(){
+          buzzer2.pulse(750);
+        });
       } else {
         buzzer1.stop();
         buzzer1.off();
