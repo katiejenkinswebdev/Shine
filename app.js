@@ -11,11 +11,11 @@ let myBoard = new five.Board();
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res){
+app.get('/app.js', function (req, res){
   //response would be function buzzerOn();
   console.log("Get request working!");
   res.send("get request working!");
-}); 
+});
 
   myBoard.on("ready" , function() {
     console.log("Arduino is ready!");

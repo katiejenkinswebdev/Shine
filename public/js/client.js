@@ -10,12 +10,15 @@
 
     on.addEventListener("click" , function() {
       console.log("You clicked on!");
-      $.get('/');
+      $.ajax({
+        url: '/app.js',
+        type: 'GET',
+        success: function(res){
+          console.log(res);
+          // alert(res);
+        }
+      });
     });
-
-    function getBuzzerOn(){
-      console.log('click for getBuzzerOn working!');
-    }
 
     off.addEventListener("click" , function() {
       console.log("You clicked off!");
