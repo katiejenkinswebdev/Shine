@@ -17,19 +17,23 @@ var pubnub = require('pubnub').init({
   subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f'
 });
 
-var channel = 'led';
+var channel = 'buzzers';
 
 myBoard.on('ready', function() {
-  var buzzer1 = new five.Led(3); //
+  var buzzer1 = new five.Led(3);
+  var buzzer2 = new five.Led(6);
 
   pubnub.subscribe({
     channel: channel,
     message: function(m) {
       if(m.blink === true) {
         buzzer1.blink(500);
+        buzzer2.blink(500);
       } else {
         buzzer1.stop();
         buzzer1.off();
+        buzzer2.stop();
+        buzzer2.off();
       }
     },
     error: function(err) {console.log(err);}

@@ -8,7 +8,7 @@ var pubnub = PUBNUB.init({
 });
 
 // Use the same channel name
-var channel = 'led';
+var channel = 'buzzers';
 
 var button = document.querySelector('button');
 
