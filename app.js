@@ -33,11 +33,16 @@ myBoard.on('ready', function() {
         myBoard.wait(750, function(){
           buzzer2.pulse(750);
         });
+        // myBoard.wait(10000, function() {
+        // console.log("shutting off buzzers");
+        // buzzer1.stop().off();
+        // buzzer2.stop().off();
+        // });
       } else {
-        buzzer1.stop();
-        buzzer1.off();
-        buzzer2.stop();
-        buzzer2.off();
+        //toggle for off button
+        buzzer1.stop().off();
+        buzzer2.stop().off();
+        return "stopped";
       }
     },
     error: function(err) {console.log(err);}
