@@ -2,9 +2,9 @@
 
 (function() {
   console.log("document ready!");
-    // var socket = io.connect(window.location.hostname + ':' + 3000);
     var on = document.getElementById("on");
     console.log(on);
+    
     var off = document.getElementById("off");
     console.log(off);
 

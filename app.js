@@ -14,54 +14,94 @@ app.use(express.static(__dirname + '/public'));
 app.get('/app.js', function (req, res){
   //call function within here
   // buzzerOn();
-  console.log("Get request working - terminal!");
-  // console.log(res.send());
-  res.send("get request working - console!");
+  console.log(res.send("GET request working from server"));
+  // myBoard.buzzerOn();
+  // res.send(buzzerOn());
 });
 
-  myBoard.on("ready" , function() {
-    console.log("Arduino is ready!");
-    // led initial test
-    // var led = new five.Led(13);
-    //   led.blink(500);
+  //constructor function to create new board
+  function BoardController(myBoard){
+    this.myBoard = myBoard;
 
-    let buzzer1 = new five.Led(3);
-    let buzzer2 = new five.Led(6);
+    this.boardOn =
+      myBoard.on("ready" , function() {
+      console.log("Arduino is ready!");
+      this.buzzer1 = new five.Led(3);
+      // this.buzzer2 = new five.Led(6);
+      });
 
-      function buzzerOn(){
-        //buzzer1
-        myBoard.wait(null, function() {
-          // pulse for 1 second
-          // buzzer1.pulse(1000);
-        });
+    // this.buzzer1 = myBoard.buzzer1;
+    // this.buzzer1 = new five.Led(3);
+    // this.myBoardOn.buzzer2 = new five.Led(6);
 
-        //buzzer2
-        myBoard.wait(1000, function() {
-          //pulse for 1 second
-          // buzzer2.pulse(1000);
-        });
+    // this.buzzerOn =
+    //   function buzzerOn(){
+    //     //buzzer1
+    //     myBoard.wait(null, function() {
+    //       // pulse for 1 second
+    //       this.buzzer1.pulse(1000);
+    //     });
+    //
+    //     //buzzer2
+    //     myBoard.wait(1000, function() {
+    //       //pulse for 1 second
+    //       // this.buzzer2.pulse(1000);
+    //     });
+    //
+    //     //turn off buzzer after 10 seconds
+    //     myBoard.wait(10000, function() {
+    //       this.buzzer1.stop().off();
+    //       // this.buzzer2.stop().off();
+    //     });
+    //   };
+  }
 
-        //turn off buzzer after 10 seconds
-        myBoard.wait(10000, function() {
-          buzzer1.stop().off();
-          buzzer2.stop().off();
-        });
-      }
+  myBoard = new BoardController (myBoard);
 
-      //turn on Buzzer
-      buzzerOn();
+  // this.boardOn();
+  // myBoard.buzzerOn();
 
-      function buzzerOff(){
-        myBoard.wait(10000, function(){
-          buzzer1.stop().off();
-          buzzer2.stop().off();
-        });
-      }
-
-      //turn off Buzzer
-      buzzerOff();
-
-    });//end of myBoard
+  //previous code before constructor
+  // myBoard.on("ready" , function() {
+  //   console.log("Arduino is ready!");
+  //
+  //   let buzzer1 = new five.Led(3);
+  //   let buzzer2 = new five.Led(6);
+  //
+  //     function buzzerOn(){
+  //       //buzzer1
+  //       myBoard.wait(null, function() {
+  //         // pulse for 1 second
+  //         // buzzer1.pulse(1000);
+  //       });
+  //
+  //       //buzzer2
+  //       myBoard.wait(1000, function() {
+  //         //pulse for 1 second
+  //         // buzzer2.pulse(1000);
+  //       });
+  //
+  //       //turn off buzzer after 10 seconds
+  //       myBoard.wait(10000, function() {
+  //         buzzer1.stop().off();
+  //         buzzer2.stop().off();
+  //       });
+  //     }
+  //
+  //     //turn on Buzzer
+  //     buzzerOn();
+  //
+  //     function buzzerOff(){
+  //       myBoard.wait(10000, function(){
+  //         buzzer1.stop().off();
+  //         buzzer2.stop().off();
+  //       });
+  //     }
+  //
+  //     //turn off Buzzer
+  //     buzzerOff();
+  //
+  //   });//end of myBoard
 
 //express server listening on port
 app.listen(port, function (){
