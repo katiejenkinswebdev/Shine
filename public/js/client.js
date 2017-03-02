@@ -12,18 +12,18 @@ var channel = 'buzzers';
 
 var button = document.querySelector('button');
 
-var blinkState = true;
+var buzzState = true;
 
 /***
 Subscribe data from all subscibers of the channel to set the button state correctly
 ***/
 pubnub.subscribe({
   channel: channel,
-  message: function(m) {
-    blinkState = m.blink; // the raw data
-    blinkState = !blinkState; // toggle it to lable the button
-    button.textContent = (blinkState) ? 'Blink LED' : 'Stop LED';
-    console.log(blinkState);
+  message: function(message) {
+    buzzState = message.buzz; // the raw data
+    buzzState = !buzzState; // toggle it to lable the button
+    button.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
+    console.log(buzzState);
   }
 });
 
@@ -34,9 +34,9 @@ Arduino will subscribe it and blink LED
 button.addEventListener('click', function(e) {
   pubnub.publish({
     channel: channel,
-    message: {blink: blinkState},
-    callback: function(m) {
-      console.log(m);
+    message: {buzz: buzzState},
+    callback: function(message) {
+      console.log(message);
     }
   });
 

@@ -11,7 +11,7 @@ let myBoard = new five.Board();
 
 app.use(express.static(__dirname + '/public'));
 
-///////PUBNUB TESTING/////////
+///////PUBNUB/////////
 var pubnub = require('pubnub').init({
   publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
   subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f'
@@ -25,29 +25,34 @@ myBoard.on('ready', function() {
 
   pubnub.subscribe({
     channel: channel,
-    message: function(m) {
-      if(m.blink === true) {
+    message: function(message) {
+      if(message.buzz === true) {
         myBoard.wait(null, function(){
           buzzer1.pulse(750);
         });
         myBoard.wait(750, function(){
           buzzer2.pulse(750);
         });
+        //toggle for timer shutoff
         // myBoard.wait(10000, function() {
-        // console.log("shutting off buzzers");
-        // buzzer1.stop().off();
-        // buzzer2.stop().off();
+        //   buzzer1.stop().off();
+        //   buzzer2.stop().off();
         // });
       } else {
         //toggle for off button
-        buzzer1.stop().off();
-        buzzer2.stop().off();
-        return "stopped";
+          buzzer1.stop().off();
+          buzzer2.stop().off();
       }
     },
-    error: function(err) {console.log(err);}
+    error: function(err)
+    {console.log(err);}
   });
 
+});
+
+//express server listening on port
+app.listen(port, function (){
+  console.log("Listening on port", port);
 });
 
 
@@ -150,8 +155,3 @@ myBoard.on('ready', function() {
   // //     buzzerOff();
   // //
   // //   });//end of myBoard
-
-//express server listening on port
-app.listen(port, function (){
-  console.log("Listening on port", port);
-});
