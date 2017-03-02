@@ -3,8 +3,10 @@
 // Use the same keys that you are going to use for Arduino code with Johnny-Five
 
 var pubnub = PUBNUB.init({
-  publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887', // Use your pub key
-  subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f' // Use your sub key
+  publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
+  subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f',
+  ssl:
+  true,
 });
 
 // Use the same channel name
@@ -15,7 +17,7 @@ var button = document.querySelector('button');
 var buzzState = true;
 
 /***
-Subscribe data from all subscibers of the channel to set the button state correctly
+Subscribe data from all subscribers of the channel to set the button state correctly
 ***/
 pubnub.subscribe({
   channel: channel,
