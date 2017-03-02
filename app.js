@@ -11,34 +11,25 @@ let myBoard = new five.Board();
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/app.js', function (req, res){
-  //call function within here
-  // buzzerOn();
-  console.log(res.send("GET request working from server"));
-  // myBoard.buzzerOn();
-  // res.send(buzzerOn());
-});
-
 ///////PUBNUB TESTING/////////
-
 var pubnub = require('pubnub').init({
-  publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887', // Use your pub key
-  subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f' // Use your sub key
+  publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
+  subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f'
 });
 
 var channel = 'led';
 
 myBoard.on('ready', function() {
-  var led = new five.Led(13); // pin 13
+  var buzzer1 = new five.Led(3); //
 
   pubnub.subscribe({
     channel: channel,
     message: function(m) {
       if(m.blink === true) {
-        led.blink(500);
+        buzzer1.blink(500);
       } else {
-        led.stop();
-        led.off();
+        buzzer1.stop();
+        buzzer1.off();
       }
     },
     error: function(err) {console.log(err);}
@@ -48,6 +39,15 @@ myBoard.on('ready', function() {
 
 
 /////////TESTING/////////
+// app.get('/app.js', function (req, res){
+//   //call function within here
+//   // buzzerOn();
+//   console.log(res.send("GET request working from server"));
+//   // myBoard.buzzerOn();
+//   // res.send(buzzerOn());
+// });
+
+
   // //constructor function to create new board
   // function BoardController(myBoard){
   //   this.myBoard = myBoard;
