@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Shine</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,700">
+
+    <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
+
+    <link rel="stylesheet" type="text/css" href="./assets/app.css">
+
+    <!--PubNub Scripts for Arduino-->
+    <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
+
+  </head>
+
+  <body ng-cloak layout = "column">
+
+    <!--Container #1-->
+    <md-toolbar layout="row" class = "md-toolbar-tools">
+      <h1>Shine</h1>
+    </md-toolbar>
+
+    <!--Container #2-->
+    <div flex layout = "row">
+
+      <!--Container #3-->
+      <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+      </md-sidenav>
+
+      <!--Container #4-->
+      <md-content flex id = "cotent">
+        Content
+        <h1>SHINE</h1>
+          <button class="on">Buzzers On</button>
+      </md-content>
+
+    </div>
+
+  <!--Additional Angular Material Scripts-->
+    <script src="./jspm_packages/system.js" type="text/javascript"></script>
+    <script src="config.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      System
+        .import('src/boot/boot')
+        .catch( console.error.bind(console) ); // make sure any errors print to console
+    </script>
+
+    <!--jQuery Script-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  </body>
+
+</html>
