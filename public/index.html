@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Shine</title>
 
-    <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
 
     <!--Angular 1.6-->
-    <script src="/node_modules/angular/angular.min.js"></script>
-    <script src="/app.module.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    
+    <script src="/app/app.module.js"></script>
+
     <script src="/controls/control.component.js"></script>
+
+    <!--PubNub Scripts for Arduino-->
+    <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
 
   </head>
   <body ng-app = "MyApp">
@@ -20,7 +23,7 @@
 
 
   <!-- Angular Material requires Angular.js Libraries -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> -->
     <!-- Animations -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <!-- Accessibility Support -->
