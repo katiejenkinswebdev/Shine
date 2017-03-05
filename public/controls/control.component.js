@@ -5,7 +5,8 @@ angular
   .module('control.component' , [])
   .component('control' , {
     controller: Controller,
-    templateUrl: 'controls/control.template.html'
+    templateUrl: 'controls/control.template.html',
+    styleUrls: 'css/control.styles.css'
   });
 
   function Controller() {
