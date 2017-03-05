@@ -13,9 +13,17 @@ angular
     const vm = this;
 
     vm.$onInit = onInit;
+    vm.submitNewTreatment = submitNewTreatment;
+    vm.treatments = [];
 
     function onInit(){
       console.log("we made it to Control Component onInit");
+    }
+
+    function submitNewTreatment (seconds, rating) {
+      console.log("submitNewTreatment triggered!");
+      var treatment = {seconds:seconds, rating:rating};
+      console.log(treatment);
     }
 
     // Initialize collapse button nav bar

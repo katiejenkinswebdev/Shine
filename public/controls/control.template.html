@@ -7,7 +7,7 @@
   </section>
 
   <section>
-    <form name = "" ng-submit = "$ctrl.event.seconds">
+    <form name = "$ctrl.submitNewTreatment()" ng-submit = "$ctrl.submitNewTreatment($ctrl.event.seconds, $ctrl.event.rating)">
     <div class = "row">
       <div class = "col s6">
         <h3>Enter seconds:</h3>
