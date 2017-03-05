@@ -3,7 +3,7 @@
 // console.log('app.config connected!');
 
  angular
-    .module('app', [])
+    .module('app', ['control.component'])
     .config(config)
   //
   // config.$inject = ['$stateProvider' , '$urlRouterProvider', '$locationProvider'];

@@ -9,20 +9,23 @@
 
     <!--Angular 1.6-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
+    <!-- <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script> -->
+
+    <!--Components-->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.config.js"></script>
+    <script src="/controls/control.component.js"></script>
 
     <!--PubNub-->
     <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
   </head>
   <body>
-    <h1>SHINE</h1>
-      <button class="on">Buzzers On</button>
+    <!-- <h1>SHINE</h1>
+      <button class="on">Buzzers On</button> -->
 
     <h2>UI View</h2>
-    <ui-view></ui-view>
+    <control></control>
 
-    <!--Components-->
-    <script src="../controls/control.component.js"></script>
 
     <!--jQuery Script-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
