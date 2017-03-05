@@ -24,6 +24,8 @@ angular
       console.log("submitNewTreatment triggered!");
       var treatment = {seconds:seconds, rating:rating};
       console.log(treatment);
+      console.log(treatment.seconds);
+      console.log({seconds});
     }
 
     // Initialize collapse button nav bar
