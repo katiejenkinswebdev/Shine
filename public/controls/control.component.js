@@ -18,6 +18,9 @@ angular
       console.log("we made it to onInit");
     }
 
+    // Initialize collapse button nav bar
+    $(".button-collapse").sideNav();
+
 //TODO translate into angular
 // var pubnub = PUBNUB.init({
 //   publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
