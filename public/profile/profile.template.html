@@ -6,9 +6,15 @@
     <div class = "row">
       <h3>Treatment History</h3>
       <table class = "striped">
+        <tr>
+          <th>Treatment</th>
+          <th>Date</th>
+          <th>Length(s)</th>
+          <th>Rating</th>
+        </tr>
         <tr ng-repeat = "treatment in $ctrl.treatments">
           <td>{{treatment.id}}</td>
-          <td>{{treatment.created_at}}</td>
+          <td>{{treatment.created_at | date}}</td>
           <td>{{treatment.seconds}}</td>
           <td>{{treatment.rating}}</td>
         </tr>
