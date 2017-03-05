@@ -4,7 +4,7 @@
 
  angular
     .module('app', ['control.component'])
-    .config(config)
+    // .config(config)
   //
   // config.$inject = ['$stateProvider' , '$urlRouterProvider', '$locationProvider'];
   //
