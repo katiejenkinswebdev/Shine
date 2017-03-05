@@ -3,6 +3,7 @@
 //express server setup
 const express = require('express');
 const app = express();
+const path = require('path');
 const env = require('dotenv').config();
 let port = process.env.PORT || 3000;
 
@@ -10,7 +11,13 @@ let port = process.env.PORT || 3000;
 const five = require('johnny-five');
 let myBoard = new five.Board();
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, '/./', 'node_modules')));
+
+//wildcard route
+app.use('*', function(req, res, next) {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+});
 
 //pubnub setup
 var pubnub = require('pubnub').init({
@@ -56,3 +63,5 @@ myBoard.on('ready', function() {
 app.listen(port, function (){
   console.log("Listening on port", port);
 });
+
+module.exports = app;
