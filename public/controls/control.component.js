@@ -15,6 +15,7 @@ angular
     vm.$onInit = onInit;
     vm.submitNewTreatment = submitNewTreatment;
     vm.treatments = [];
+    // vm.countdown = countdown;
 
     function onInit(){
       console.log("we made it to Control Component onInit");
@@ -24,9 +25,17 @@ angular
       console.log("submitNewTreatment triggered!");
       var treatment = {seconds:seconds, rating:rating};
       console.log(treatment);
-      console.log(treatment.seconds);
+      console.log(treatment.seconds - 1);
       console.log({seconds});
+      // var countdown = treatment.seconds;
+      // console.log(countdown);
     }
+
+    // function countdown (seconds) {
+    //   while(seconds > 0){
+    //   console.log(seconds);
+    // }
+    // }
 
     // Initialize collapse button nav bar
     $(".button-collapse").sideNav();
