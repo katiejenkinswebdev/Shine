@@ -25,12 +25,44 @@
     <script src="/app/app.config.js"></script>
     <script src="/controls/control.component.js"></script>
 
+    <script src="/learn/learn.component.js"></script>
+
     <!--PubNub-->
     <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
   </head>
   <body>
+    <!--Nav Bar-->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+          <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+          <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+          <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+        </ul>
+
+      <ul id="slide-out" class="side-nav">
+      <li><div class="userView">
+        <div class="background">
+          <img src="images/office.jpg">
+        </div>
+        <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+        <a href="#!name"><span class="white-text name">John Doe</span></a>
+        <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
     <control></control>
+    <learn></learn>
 
     <!--jQuery Script-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -38,4 +70,12 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 
+<!--footer-->
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container center">
+      © 2017 katie a jenkins
+      </div>
+    </div>
+  </footer>
 </html>

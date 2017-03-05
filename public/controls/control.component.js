@@ -15,7 +15,7 @@ angular
     vm.$onInit = onInit;
 
     function onInit(){
-      console.log("we made it to onInit");
+      console.log("we made it to Control Component onInit");
     }
 
     // Initialize collapse button nav bar
