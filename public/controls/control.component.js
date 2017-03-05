@@ -2,14 +2,16 @@
 'use strict';
 
 angular
-  .module('control.component' , [])
+  .module('control.component' , ['ui.router'])
   .component('control' , {
     controller: Controller,
     templateUrl: 'controls/control.template.html',
     styleUrls: 'css/control.styles.css'
   });
 
-  function Controller() {
+  Controller.$inject = ['$http'];
+
+  function Controller($http) {
     const vm = this;
 
     vm.$onInit = onInit;
@@ -19,6 +21,11 @@ angular
 
     function onInit(){
       console.log("we made it to Control Component onInit");
+      // $http.get('/api/treatments')
+      // .then(results => {
+      //   vm.treatments = results.data;
+      //   console.log(results.data);
+      // });
     }
 
     function submitNewTreatment (seconds, rating) {
@@ -27,8 +34,13 @@ angular
       console.log(treatment);
       console.log(treatment.seconds - 1);
       console.log({seconds});
-      // var countdown = treatment.seconds;
-      // console.log(countdown);
+
+      // $http.post('/api/treatments' , treatment)
+      //   .then(response => {
+      //     console.log(response);
+      //     vm.treatments.push(treatment);
+      //     delete vm.treatment;
+      // });
     }
 
     // function countdown (seconds) {

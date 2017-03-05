@@ -14,8 +14,8 @@ let myBoard = new five.Board();
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname, '/./', 'node_modules')));
 
-// const messages = require('./routes/classifieds');
-// app.use('/api/classifieds',messages);
+const treatments = require('./routes/treatments');
+app.use('/api/treatments',treatments);
 
 //wildcard route
 app.use('*', function(req, res, next) {

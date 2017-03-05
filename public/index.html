@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Shine</title>
 
+    <base href="/">
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -11,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link rel ="stylesheet" type="text/css" href="./css/control.styles.css">
 
-    <link rel="stylesheet" href="/assets/css/flipclock.css">
+    <!-- <link rel="stylesheet" href="/assets/css/flipclock.css"> -->
 
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,7 +22,7 @@
 
     <!--Angular 1.6-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <!-- <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script> -->
+    <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
 
     <!--Angular Timer-->
     <!-- <script type="text/javascript" src="/app/bower_components/angular-timer-bower.js"></script> -->
@@ -72,13 +74,16 @@
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-
+<!--
     <control></control>
-    <learn></learn>
+    <learn></learn> -->
+
+    <h1>UI View</h1>
+    <ui-view></ui-view>
 
     <!--FlipClock-->
-    <script src="/assets/js/libs/jquery.js"></script>
-		<script src="/assets/js/flipclock/flipclock.min.js"></script>
+    <!-- <script src="/assets/js/libs/jquery.js"></script>
+		<script src="/assets/js/flipclock/flipclock.min.js"></script> -->
     <!--jQuery Script-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 

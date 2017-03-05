@@ -2,14 +2,16 @@
 'use strict';
 
 angular
-  .module('learn.component', [])
+  .module('learn.component', ['ui.router'])
   .component('learn' , {
     controller: Controller,
     templateUrl: 'learn/learn.template.html',
     styleUrls: 'css/learn.styles.css'
   });
 
-  function Controller() {
+  Controller.$inject = ['$http'];
+
+  function Controller($http) {
     const vm = this;
 
     vm.$onInit = onInit;
