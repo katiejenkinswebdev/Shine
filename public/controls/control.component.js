@@ -49,8 +49,7 @@ angular
     // }
     // }
 
-    // Initialize collapse button nav bar
-    $(".button-collapse").sideNav();
+
 
 //TODO translate into angular
 // var pubnub = PUBNUB.init({

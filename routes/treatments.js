@@ -9,14 +9,15 @@ const knex = require('../knex');
 router.get ('/' , (req, res, next) => {
   console.log('get route connected!');
 
-  // knex('classifieds')
-  //   .select ('id', 'title' , 'description' , 'price' , 'item_image')
-  // .then((results) => {
-  //   res.send(results);
-  // })
-  // .catch((err) => {
-  //   next(err);
-  // });
+  knex('treatments')
+    .select ('id', 'seconds' , 'rating' , 'users_id' , 'created_at')
+  .then((results) => {
+    res.send(results);
+    // console.log(results.data[0]);
+  })
+  .catch((err) => {
+    next(err);
+  });
 });
 
 // router.get('/:id' , (req, res, next) => {

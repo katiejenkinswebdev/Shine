@@ -31,21 +31,25 @@
     <!--Components-->
     <script src="/app/app.module.js"></script>
     <script src="/app/app.config.js"></script>
+
     <script src="/controls/control.component.js"></script>
 
     <script src="/learn/learn.component.js"></script>
 
+    <script src="/profile/profile.component.js"></script>
+
     <!--PubNub-->
     <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
+
   </head>
   <body>
     <!--Nav Bar-->
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+        <a href="/" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html"><i class="material-icons">extension</i></a></li>
-          <li><a href="badges.html"><i class="material-icons">face</i></a></li>
+          <li><a href="learn.html"><i class="material-icons">extension</i></a></li>
+          <li><a href="profile.html"><i class="material-icons">face</i></a></li>
           <!-- <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
           <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li> -->
         </ul>
@@ -61,9 +65,9 @@
     </div></li> -->
 
     <!--Page Links-->
-    <li><a href="sass.html"><i class="material-icons">extension</i>Learn</a></li>
+    <li><a href="learn.html"><i class="material-icons">extension</i>Learn</a></li>
 
-    <li><a href="badges.html"><i class="material-icons">face</i>Profile</a></li>
+    <li><a href="profile.html"><i class="material-icons">face</i>Profile</a></li>
 
     <li><div class="divider"></div></li>
       <li><a class="subheader">Resources</a></li>
@@ -74,11 +78,7 @@
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-<!--
-    <control></control>
-    <learn></learn> -->
 
-    <h1>UI View</h1>
     <ui-view></ui-view>
 
     <!--FlipClock-->
@@ -86,7 +86,7 @@
 		<script src="/assets/js/flipclock/flipclock.min.js"></script> -->
     <!--jQuery Script-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-
+    <script src="js/index.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 

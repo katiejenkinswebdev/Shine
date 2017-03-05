@@ -3,7 +3,7 @@
 // console.log('app.config connected!');
 
  angular
-    .module('app', [ 'ui.router', 'control.component','learn.component'])
+    .module('app', [ 'ui.router', 'control.component','learn.component' , 'profile.component'])
     .config(config);
 
   config.$inject = ['$stateProvider' , '$urlRouterProvider', '$locationProvider'];
@@ -19,9 +19,14 @@
         component: 'control',
       })
     .state({
-      name: 'learn',
-      url: '/:id',
-      component: 'learn'
+      name: 'profile',
+      url: '/:profile',
+      component: 'profile'
     });
+    // .state({
+    //   name: 'profile',
+    //   url: '/:profile',
+    //   component: 'profile'
+    // });
   }
 }());
