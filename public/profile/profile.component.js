@@ -25,9 +25,6 @@ angular
         vm.treatments = results.data;
         console.log(results.data);
       })
-
     }
-
-    // $('.carousel.carousel-slider').carousel({fullWidth: true});
   }
 }());

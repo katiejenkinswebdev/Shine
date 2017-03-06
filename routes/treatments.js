@@ -1,9 +1,7 @@
 'use strict';
 
 const express = require('express');
-
 const router = express.Router();
-
 const knex = require('../knex');
 
 router.get ('/' , (req, res, next) => {
@@ -47,7 +45,6 @@ router.post('/' , (req, res, next) => {
   console.log(rating);
   const users_id = 1;
   console.log(users_id);
-  // console.log(title, description, price, item_image);
 
   knex('treatments')
     .insert({seconds:seconds, rating:rating, users_id:users_id})
@@ -61,6 +58,7 @@ router.post('/' , (req, res, next) => {
   });
 });
 
+//TODO need patch or delete routes?
 // router.patch('/:id' , (req, res, next) => {
 //   // console.log('patch route connected');
 //   const id = req.params.id;
