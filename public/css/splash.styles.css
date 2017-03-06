@@ -1,4 +1,16 @@
-#splash {
-  height: 500px;
+/*#splash {
+  height: 100%;
   width: auto;
+}*/
+
+img {
+  height: 20ems;
+  width: 100%;
+  margin-top: 50px;
+  opacity: .8;
+  box-shadow: 10px 10px 10px #888888;
+}
+
+#logIn {
+  float: right;
 }
