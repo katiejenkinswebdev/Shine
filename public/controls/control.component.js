@@ -24,8 +24,8 @@ angular
     function onInit(){
       console.log("we made it to Control Component onInit");
 
+      //controls side nav slide out
       $(".button-collapse").sideNav();
-      console.log('made it to index.js');
     }
 
     function submitNewTreatment (seconds, rating) {
