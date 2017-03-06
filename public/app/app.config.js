@@ -10,7 +10,7 @@
 
   routerApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/control');
+    $urlRouterProvider.otherwise('/learn');
 
     $locationProvider.html5Mode(true);
 
