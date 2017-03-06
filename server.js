@@ -11,7 +11,9 @@ let port = process.env.PORT || 3000;
 const five = require('johnny-five');
 let myBoard = new five.Board();
 
+// parse application/x-www-form-urlencoded
 const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname,'public')));
@@ -19,6 +21,9 @@ app.use(express.static(path.join(__dirname, '/./', 'node_modules')));
 
 const treatments = require('./routes/treatments');
 app.use('/api/treatments',treatments);
+
+const users = require('./routes/users');
+app.use('/api/users', users);
 
 //wildcard route
 app.use('*', function(req, res, next) {

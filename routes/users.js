@@ -1,24 +1,28 @@
 'use strict';
 
 const express = require('express');
-
 const router = express.Router();
 
 const knex = require('../knex');
 
-// router.get ('/' , (req, res, next) => {
-//   console.log('get route connected!');
-//
-//   knex('users')
-//     .select ('id', 'name')
-//   .then((results) => {
-//     res.send(results);
-//     // console.log(results.data[0]);
-//   })
-//   .catch((err) => {
-//     next(err);
-//   });
-// });
+router.get ('/' , (req, res, next) => {
+  console.log('get users route connected!');
+  res.send('route is connected');
+
+  // knex('users')
+  //   .select ('id', 'name')
+  // .then((results) => {
+  //   res.send(results);
+  //   // console.log(results.data[0]);
+  // })
+  // .catch((err) => {
+  //   next(err);
+  // });
+});
+
+router.post('/', (req,res,next) => {
+ res.send(req.body);
+ });
 
 // router.get('/:id' , (req, res, next) => {
 //   // console.log('get by id connected');
