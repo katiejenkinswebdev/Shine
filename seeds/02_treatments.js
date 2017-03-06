@@ -9,12 +9,12 @@ exports.seed = function(knex, Promise) {
       .insert([
         {
           id: 1,
-          seconds: 1000,
+          seconds: 30,
           rating: 7,
           users_id: 1
           },
         {id: 2,
-          seconds: 3000,
+          seconds: 40,
           rating: 3,
           users_id: 2
         }
