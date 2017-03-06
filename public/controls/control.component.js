@@ -15,7 +15,8 @@ angular
     const vm = this;
 
     vm.$onInit = onInit;
-    vm.submitNewTreatment = submitNewTreatment;
+    vm.startTreatment = startTreatment;
+    vm.submitTreatment = submitTreatment;
     vm.stopTreatment = stopTreatment;
     vm.treatments = [];
 
@@ -28,8 +29,8 @@ angular
       $(".button-collapse").sideNav();
     }
 
-    function submitNewTreatment (seconds, rating) {
-      console.log("submitNewTreatment triggered!");
+    function startTreatment() {
+      console.log("start treatment triggered!");
 
       let pubnub = PUBNUB.init({
         publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
@@ -41,10 +42,9 @@ angular
       let channel = 'buzzers';
 
       var startButton = document.getElementById('start');
-      console.log(startButton);
 
       let buzzState = true;
-      console.log(buzzState);
+      // console.log(buzzState);
 
       // // Subscribe data from all subscribers of the channel to set the button state correctly
       //
@@ -77,8 +77,22 @@ angular
       //   });
     }
 
+    function submitTreatment (seconds, rating, $http) {
+      console.log("submit treatment triggered");
+
+      var treatment = {seconds:seconds, rating:rating};
+      console.log('treatment ' ,treatment);
+
+      $http.post('/api/treatments', treatment)
+        .then(response => {
+          console.log(response.data);
+          // vm.treatments.push(treatment);
+          // delete vm.treatment;
+        });
+    };
+
     function stopTreatment(){
-      console.log('clicking stop treatment');
+      console.log('stop treatment triggered');
 
       let pubnub = PUBNUB.init({
         publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',

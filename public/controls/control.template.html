@@ -6,7 +6,7 @@
   </div>
 
   <div class = "row">
-    <form name = "$ctrl.submitNewTreatment()" ng-submit = "$ctrl.submitNewTreatment($ctrl.event.seconds, $ctrl.event.rating)">
+    <form name = "$ctrl.submitTreatment()" ng-submit = "$ctrl.submitTreatment($ctrl.event.seconds, $ctrl.event.rating)">
       <div class = "col s4">
         <h5>Enter seconds:</h5>
         <i class="material-icons prefix">mode_edit</i>
@@ -30,7 +30,7 @@
       </div>
 
       <div class = "col s2">
-        <button id = "start">Start</button>
+        <button id = "start" ng-click = " $ctrl.startTreatment()">Start</button>
       </div>
   </form>
   <div class = "col s2">
