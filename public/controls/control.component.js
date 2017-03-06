@@ -50,7 +50,7 @@ angular
         message: function(message) {
           buzzState = message.buzz; // raw data
           buzzState = true; // toggle to label button
-          startButton.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
+          // startButton.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
           console.log(buzzState);
         }
       });
@@ -98,8 +98,8 @@ angular
          message: function(message) {
            buzzState = message.buzz; // raw data
            buzzState = false; // toggle to label button
-           stopButton.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
-           console.log(buzzState);
+          //  stopButton.textContent = 'Buzzers On';
+          //  console.log(buzzState);
          }
        });
 
