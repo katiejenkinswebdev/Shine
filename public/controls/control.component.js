@@ -16,62 +16,17 @@ angular
 
     vm.$onInit = onInit;
     vm.submitNewTreatment = submitNewTreatment;
+    vm.stopTreatment = stopTreatment;
     vm.treatments = [];
 
-////previous working code//////////
-
-    // var pubnub = PUBNUB.init({
-    //   publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
-    //   subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f',
-    //   ssl:
-    //   true,
-    // });
-
-    // var channel = 'buzzers';
-    //
-    // var button = document.querySelector('button');
-    //
-    // var buzzState = true;
-    //
-    // // Subscribe data from all subscribers of the channel to set the button state correctly
-    //
-    // pubnub.subscribe({
-    //   channel: channel,
-    //   message: function(message) {
-    //     buzzState = message.buzz; // raw data
-    //     buzzState = !buzzState; // toggle to label button
-    //     button.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
-    //     console.log(buzzState);
-    //   }
-    // });
-    //
-    // // Upon a button click, publish the data. Arduino will subscribe it and turn on buzzers
-    //
-    // button.addEventListener('click', function(e) {
-    //   pubnub.publish({
-    //     channel: channel,
-    //     message: {buzz: buzzState},
-    //     callback: function(message) {
-    //       console.log(message);
-    //     }
-    //   });
-    // });
-
-      }//end of Controller
-
+    }//end of Controller
 
     function onInit(){
       console.log("we made it to Control Component onInit");
-      // $http.get('/api/treatments')
-      // .then(results => {
-      //   vm.treatments = results.data;
-      //   console.log(results.data);
-      // });
     }
 
     function submitNewTreatment (seconds, rating) {
       console.log("submitNewTreatment triggered!");
-
 
       let pubnub = PUBNUB.init({
         publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
@@ -82,8 +37,8 @@ angular
 
       let channel = 'buzzers';
 
-      var button = document.querySelector('button');
-      console.log(button);
+      var startButton = document.getElementById('start');
+      console.log(startButton);
 
       let buzzState = true;
       console.log(buzzState);
@@ -94,8 +49,8 @@ angular
         channel: channel,
         message: function(message) {
           buzzState = message.buzz; // raw data
-          buzzState = !buzzState; // toggle to label button
-          button.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
+          buzzState = true; // toggle to label button
+          startButton.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
           console.log(buzzState);
         }
       });
@@ -117,6 +72,44 @@ angular
       //     // vm.treatments.push(treatment);
       //     // delete vm.treatment;
       //   });
+    }
+
+    function stopTreatment(){
+      console.log('clicking stop treatment');
+
+      let pubnub = PUBNUB.init({
+        publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
+        subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f',
+        ssl:
+        true,
+      });
+
+      let channel = 'buzzers';
+       var stopButton = document.getElementById('stop');
+       console.log(stopButton);
+
+       let buzzState = false;
+       console.log(buzzState);
+
+       // // Subscribe data from all subscribers of the channel to set the button state correctly
+       //
+       pubnub.subscribe({
+         channel: channel,
+         message: function(message) {
+           buzzState = message.buzz; // raw data
+           buzzState = false; // toggle to label button
+           stopButton.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
+           console.log(buzzState);
+         }
+       });
+
+         pubnub.publish({
+           channel: channel,
+           message: {buzz: buzzState},
+           callback: function(message) {
+             console.log(message);
+           }
+         });
     }
 
 

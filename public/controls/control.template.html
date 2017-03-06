@@ -2,19 +2,13 @@
     <div class = "row">
       <div class = "col s12">
         <h1>SHINE</h1>
-
-        <div class = "row">
-          <!-- <div class = "col s12">
-          <button>Buzzers On</button>
-      </div> -->
-      </div>
     </div>
   </div>
 
   <div class = "row">
     <form name = "$ctrl.submitNewTreatment()" ng-submit = "$ctrl.submitNewTreatment($ctrl.event.seconds, $ctrl.event.rating)">
       <div class = "col s4">
-        <h3>Enter seconds:</h3>
+        <h5>Enter seconds:</h5>
         <i class="material-icons prefix">mode_edit</i>
         <label for = "seconds">Seconds</label>
           <input
@@ -25,7 +19,7 @@
       </div>
 
       <div class = "col s4">
-        <h3>Rating 1 - 7:</h3>
+        <h5>Rating 1 - 7:</h5>
         <i class="material-icons prefix">mode_edit</i>
         <label for = "rating">Rating</label>
           <input
@@ -35,11 +29,13 @@
             ng-model = "$ctrl.event.rating">
       </div>
 
-      <div class = "col s4">
-        <button name = "submit">Submit</button>
+      <div class = "col s2">
+        <button id = "start">Start</button>
       </div>
-
   </form>
+  <div class = "col s2">
+    <button id = "stop" ng-click = "$ctrl.stopTreatment()">Stop</button>
+  </div>
 </div>
 
 <div class = "row">
