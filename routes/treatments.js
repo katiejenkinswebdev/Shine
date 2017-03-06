@@ -13,50 +13,54 @@ router.get ('/' , (req, res, next) => {
     .select ('id', 'seconds' , 'rating' , 'users_id' , 'created_at')
   .then((results) => {
     res.send(results);
-    console.log("treatments " , results.data[0]);
+    // console.log("treatments " , results);
   })
   .catch((err) => {
     next(err);
   });
 });
 
+//TODO Test and finish - do I need?
 // router.get('/:id' , (req, res, next) => {
-//   // console.log('get by id connected');
+//   console.log('get by id connected');
 //   const id = req.params.id;
 //
-//   knex('classifieds')
-//     .select('id' , 'title' , 'description' , 'price' , 'item_image')
+//   knex('treatments')
+//     .select ('id', 'seconds' , 'rating' , 'users_id' , 'created_at')
 //     .where('id' , id)
 //
 //   .then((results) => {
+//     console.log(results[0]);
 //     res.send(results[0]);
 //   })
 //   .catch((err) => {
 //     next(err);
 //   });
 // });
-//
-// router.post('/' , (req, res, next) => {
-//   // console.log('post route connected');
-//
-//   const title = req.body.title;
-//   const description = req.body.description;
-//   const price = req.body.price;
-//   const item_image = req.body.item_image;
-//   // console.log(title, description, price, item_image);
-//
-//   knex('classifieds')
-//     .insert({title:title, description:description, price:price , item_image:item_image})
-//     .returning(['id', 'title' , 'description', 'price' , 'item_image' , 'updated_at'])
-//
-//   .then((results) => {
-//     res.send(results[0]);
-//   })
-//   .catch((err) => {
-//     next(err);
-//   });
-// });
-//
+
+router.post('/' , (req, res, next) => {
+  console.log('post route connected');
+
+  const seconds = req.body.seconds;
+  console.log(seconds);
+  const rating = req.body.rating;
+  console.log(rating);
+  const users_id = 1;
+  console.log(users_id);
+  // console.log(title, description, price, item_image);
+
+  knex('treatments')
+    .insert({seconds:seconds, rating:rating, users_id:users_id})
+    .returning(['id', 'seconds' , 'rating', 'created_at'])
+
+  .then((results) => {
+    res.send(results[0]);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
 // router.patch('/:id' , (req, res, next) => {
 //   // console.log('patch route connected');
 //   const id = req.params.id;

@@ -30,17 +30,16 @@ angular
 
     function submitNewTreatment (seconds, rating) {
       console.log("submitNewTreatment triggered!");
-      var treatment = {seconds:seconds, rating:rating};
-      console.log(treatment);
-      console.log(treatment.seconds - 1);
-      console.log({seconds});
 
-      // $http.post('/api/treatments' , treatment)
-      //   .then(response => {
-      //     console.log(response);
-      //     vm.treatments.push(treatment);
-      //     delete vm.treatment;
-      // });
+      var treatment = {seconds:seconds, rating:rating};
+      console.log('treatment ' ,treatment);
+
+      $http.post('/api/treatments', treatment)
+        .then(response => {
+          console.log(response.data);
+          // vm.treatments.push(treatment);
+          // delete vm.treatment;
+        });
     }
 
     // function countdown (seconds) {
