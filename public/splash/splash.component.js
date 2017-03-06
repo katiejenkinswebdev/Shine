@@ -9,9 +9,7 @@ angular
     styleUrls: 'css/splash.styles.css'
   });
 
-  Controller.$inject = ['$http'];
-
-  function Controller($http) {
+  function Controller() {
     const vm = this;
 
     vm.$onInit = onInit;

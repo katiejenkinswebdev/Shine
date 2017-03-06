@@ -1,0 +1,23 @@
+body {
+    height: 500px;
+    background-image: url("/assets/bkgrnd_1.jpg");
+}
+
+#splash {
+  height: 500px;
+  width: auto;
+}
+
+/*.parallax {
+    /* The image used */
+    /*background-image: url("/assets/bkgrnd_1.jpg");
+    /* Full height */
+    /*height: 100%;
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    /*background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+/*}*/

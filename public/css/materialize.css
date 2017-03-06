@@ -2866,8 +2866,8 @@ ul.staggered-list li {
 }
 
 footer.page-footer {
-  padding-top: 20px;
-  background-color: #ee6e73;
+  /*padding-top: 20px;*/
+  background-color: rgba(102, 106, 151, 0.8);
 }
 
 footer.page-footer .footer-copyright {
@@ -2881,7 +2881,8 @@ footer.page-footer .footer-copyright {
           align-items: center;
   padding: 10px 0px;
   color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(51, 51, 51, 0.08);
+  /*background-color: rgba(51, 51, 51, 0.08);*/
+  /*position: absolute;*/
 }
 
 table, th, td {
@@ -4004,7 +4005,7 @@ nav ul a span.badge {
 
 nav {
   color: #fff;
-  background-color: #ee6e73;
+  background-color: rgba(102, 106, 151, 0.8);;
   width: 100%;
   height: 56px;
   line-height: 56px;
