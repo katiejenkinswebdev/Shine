@@ -11,6 +11,9 @@ let port = process.env.PORT || 3000;
 const five = require('johnny-five');
 let myBoard = new five.Board();
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname, '/./', 'node_modules')));
 
