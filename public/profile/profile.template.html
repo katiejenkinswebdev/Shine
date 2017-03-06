@@ -23,7 +23,7 @@
         </tr>
         <tr ng-repeat = "treatment in $ctrl.treatments">
           <td>{{treatment.id}}</td>
-          <td>{{treatment.created_at | date}}</td>
+          <td>{{treatment.created_at | date : "short"}}</td>
           <td>{{treatment.seconds | number}}</td>
           <td>{{treatment.rating}}</td>
         </tr>
