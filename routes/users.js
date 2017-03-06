@@ -6,19 +6,19 @@ const router = express.Router();
 
 const knex = require('../knex');
 
-router.get ('/' , (req, res, next) => {
-  console.log('get route connected!');
-
-  knex('treatments')
-    .select ('id', 'seconds' , 'rating' , 'users_id' , 'created_at')
-  .then((results) => {
-    res.send(results);
-    console.log("treatments " , results.data[0]);
-  })
-  .catch((err) => {
-    next(err);
-  });
-});
+// router.get ('/' , (req, res, next) => {
+//   console.log('get route connected!');
+//
+//   knex('users')
+//     .select ('id', 'name')
+//   .then((results) => {
+//     res.send(results);
+//     // console.log(results.data[0]);
+//   })
+//   .catch((err) => {
+//     next(err);
+//   });
+// });
 
 // router.get('/:id' , (req, res, next) => {
 //   // console.log('get by id connected');

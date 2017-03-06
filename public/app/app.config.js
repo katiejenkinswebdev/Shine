@@ -18,15 +18,15 @@
         url: '/',
         component: 'control',
       })
-    .state({
-      name: 'profile',
-      url: '/:profile',
-      component: 'profile'
-    });
-    // .state({
-    //   name: 'profile',
-    //   url: '/:profile',
-    //   component: 'profile'
-    // });
-  }
+      // .state({
+      //   name: 'learn',
+      //   url: '/:learn',
+      //   component: 'learn'
+      // })
+      .state({
+        name: 'profile',
+        url: '/:profile',
+        component: 'profile'
+      });
+    }
 }());

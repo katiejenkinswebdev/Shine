@@ -18,12 +18,16 @@ angular
 
     function onInit(){
       console.log("we made it to Profile Component onInit");
+
       $http.get('/api/treatments')
       .then(results => {
-        console.log(results.data);
-        vm.treatments = results.data;
         // console.log(results.data);
-      });
+        vm.treatments = results.data;
+        console.log(results.data);
+      })
+
+
+
     }
 
     // $('.carousel.carousel-slider').carousel({fullWidth: true});

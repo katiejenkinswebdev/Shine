@@ -1,10 +1,19 @@
 <div class="container">
-    <div class = "row">
-      <h1>My Profile</h1>
+  <div class = "row">
+    <div class = "col 4">
+    <h2>My Profile</h2>
+      <!-- <div ng-repeat = "user in $ctrl.users">
+      <h4>{{user.name}}</h4>
+      </div> -->
     </div>
 
-    <div class = "row">
+    <div class = "col 8">
       <h3>Treatment History</h3>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col s12">
       <table class = "striped">
         <tr>
           <th>Treatment</th>
@@ -19,8 +28,7 @@
           <td>{{treatment.rating}}</td>
         </tr>
       </table>
-
     </div>
-
+  </div>
 
 </div><!--end of Container
