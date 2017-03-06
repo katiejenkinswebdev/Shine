@@ -23,6 +23,9 @@ angular
 
     function onInit(){
       console.log("we made it to Control Component onInit");
+
+      $(".button-collapse").sideNav();
+      console.log('made it to index.js');
     }
 
     function submitNewTreatment (seconds, rating) {
