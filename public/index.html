@@ -13,8 +13,6 @@
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link rel ="stylesheet" type="text/css" href="./css/control.styles.css">
 
-    <!-- <link rel="stylesheet" href="/assets/css/flipclock.css"> -->
-
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -29,9 +27,7 @@
     <script src="/app/app.config.js"></script>
 
     <script src="/controls/control.component.js"></script>
-
     <script src="/learn/learn.component.js"></script>
-
     <script src="/profile/profile.component.js"></script>
 
     <!--PubNub-->
@@ -40,20 +36,19 @@
     <!--jQuery Script-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-
   </head>
+
   <body>
-    <!--Nav Bar-->
+    <!--Main Nav Bar-->
     <nav>
       <div class="nav-wrapper">
         <a ui-sref="control" class="brand-logo"><i class="material-icons">wb_sunny</i>Shine</a>
         <ul class="right hide-on-med-and-down">
           <li><a ui-sref="learn"><i class="material-icons">extension</i></a></li>
           <li><a ui-sref="profile"><i class="material-icons">face</i></a></li>
-          <!-- <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-          <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li> -->
         </ul>
 
+        <!--Slide Out Navigation-->
         <ul id="slide-out" class="side-nav">
         <!-- <li><div class="userView">
           <div class="background">
@@ -64,30 +59,29 @@
           <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
         </div></li> -->
 
-        <!--Page Links-->
-        <li><a ui-sref="learn"><i class="material-icons">extension</i>Learn</a></li>
+          <li><a ui-sref="learn"><i class="material-icons">extension</i>Learn</a></li>
 
-        <li><a ui-sref="profile"><i class="material-icons">face</i>Profile</a></li>
+          <li><a ui-sref="profile"><i class="material-icons">face</i>Profile</a></li>
 
-        <li><div class="divider"></div></li>
-          <li><a class="subheader">Resources</a></li>
-            <li><a class="waves-effect" href="#!">Resource 1 </a></li>
-            <li><a class="waves-effect" href="#!">Resource 2 </a></li>
-            <li><a class="waves-effect" href="#!">Resource 3 </a></li>
-          </ul>
-          <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-      </nav>
+          <li><div class="divider"></div></li>
+            <li><a class="subheader">Resources</a></li>
+              <li><a class="waves-effect" href="#!">Resource 1 </a></li>
+              <li><a class="waves-effect" href="#!">Resource 2 </a></li>
+              <li><a class="waves-effect" href="#!">Resource 3 </a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
 
   <ui-view></ui-view>
 
-<!--footer-->
-  <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container center">
-      © 2017 time to shine
+    <!--Footer-->
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container center">
+        © 2017 time to shine
+        </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
