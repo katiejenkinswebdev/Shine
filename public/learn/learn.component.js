@@ -18,6 +18,9 @@ angular
 
     function onInit(){
       console.log("we made it to Learn Component onInit");
+      $(document).ready(function(){
+        $('.collapsible').collapsible();
+ });
     }
 
     $('.carousel.carousel-slider').carousel({fullWidth: true});
