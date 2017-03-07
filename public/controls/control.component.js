@@ -19,9 +19,6 @@ angular
     vm.submitTreatment = submitTreatment;
     vm.stopTreatment = stopTreatment;
     vm.treatments = [];
-    // vm.$http = $http;
-
-
 
     function onInit(){
       console.log("we made it to Control Component onInit");
@@ -44,8 +41,7 @@ angular
       var startButton = document.getElementById('start');
       let buzzState = true;;
 
-      // Subscribe data from all subscribers of the channel to set the button state correctly
-      //
+      // Subscribe data from all subscribers of the channel to set the button state correctly//
       pubnub.subscribe({
         channel: channel,
         message: function(message) {
@@ -74,8 +70,8 @@ angular
       $http.post('/api/treatments', treatment)
         .then(response => {
           console.log(response.data);
-          // vm.treatments.push(treatment);
-          // delete vm.treatment;
+          vm.treatments.push(treatment);
+          delete vm.treatment;
         });
     }
 
@@ -96,25 +92,24 @@ angular
        let buzzState = false;
        console.log(buzzState);
 
-       // // Subscribe data from all subscribers of the channel to set the button state correctly
-       //
-       pubnub.subscribe({
-         channel: channel,
-         message: function(message) {
-           buzzState = message.buzz; // raw data
-           buzzState = false; // toggle to label button
-          //  stopButton.textContent = 'Buzzers On';
-          //  console.log(buzzState);
-         }
-       });
+     // Subscribe data from all subscribers of the channel to set the button state correctly//
+     pubnub.subscribe({
+       channel: channel,
+       message: function(message) {
+         buzzState = message.buzz; // raw data
+         buzzState = false; // toggle to label button
+        //  stopButton.textContent = 'Buzzers On';
+        //  console.log(buzzState);
+       }
+     });
 
-         pubnub.publish({
-           channel: channel,
-           message: {buzz: buzzState},
-           callback: function(message) {
-             console.log(message);
-           }
-         });
+       pubnub.publish({
+         channel: channel,
+         message: {buzz: buzzState},
+         callback: function(message) {
+           console.log(message);
+         }
+     });
     }
-        }//end of Controller
+  }//end of Controller
 }()); //end of Controller
