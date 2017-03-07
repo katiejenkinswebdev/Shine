@@ -1,7 +1,6 @@
-#aboutMe {
-  height: 50%;*/
-  width: 80%;
-  border-radius:50%;
+#profilePic {
+  height: 100%;
+  width: 100%;
 }
 
 /*#aboutMe {
@@ -10,4 +9,15 @@
 
 .anchor{
   color: white;
+}
+
+#aboutMe {
+  border: 1px dashed black;
+  height: auto;
+  /*width: 100%;*/
+  background-color: rgba(89,90,131,.8);
+  /*padding-left: 10px;*/
+  padding: 0 30px 0 30px;
+  color: rgba(224,224,224 ,1);
+
 }
