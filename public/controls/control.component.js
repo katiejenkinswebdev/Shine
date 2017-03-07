@@ -31,6 +31,9 @@ angular
     function startTreatment() {
       console.log("start treatment triggered!");
 
+      var modal = document.getElementById('timerModal');
+      modal.style.display = "block";
+
       vm.showTimerModal = !vm.showTimerModal;
 
       let pubnub = PUBNUB.init({
@@ -42,7 +45,7 @@ angular
 
       let channel = 'buzzers';
       var startButton = document.getElementById('start');
-      let buzzState = true;;
+      let buzzState = true;
 
       // Subscribe data from all subscribers of the channel to set the button state correctly//
       pubnub.subscribe({
@@ -81,7 +84,8 @@ angular
     function stopTreatment(){
       console.log('stop treatment triggered');
 
-      vm.showTimerModal = !vm.showTimerModal;
+      var modal = document.getElementById('timerModal');
+      modal.style.display = "none";
 
       let pubnub = PUBNUB.init({
         publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
