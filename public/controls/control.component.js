@@ -19,6 +19,7 @@ angular
     vm.submitTreatment = submitTreatment;
     vm.stopTreatment = stopTreatment;
     vm.treatments = [];
+    vm.showTimerModal = false;
 
     function onInit(){
       console.log("we made it to Control Component onInit");
@@ -30,6 +31,8 @@ angular
     function startTreatment() {
       console.log("start treatment triggered!");
 
+      vm.showTimerModal = !vm.showTimerModal;
+      
       let pubnub = PUBNUB.init({
         publish_key: 'pub-c-c38b69e7-3a86-4037-939b-98aa303bd887',
         subscribe_key: 'sub-c-45239d26-ff7d-11e6-8ce0-0619f8945a4f',
@@ -63,6 +66,7 @@ angular
 
     function submitTreatment (seconds, rating) {
       console.log("submit treatment triggered");
+
 
       var treatment = {seconds:seconds, rating:rating};
       console.log('treatment ' ,treatment);
@@ -111,5 +115,8 @@ angular
          }
      });
     }
+    // function showTimerModal() {
+    //
+    // }
   }//end of Controller
 }()); //end of Controller
