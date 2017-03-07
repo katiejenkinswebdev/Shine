@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Shine</title>
 
-    <base href="/">
+    <base href="/splash">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -37,7 +37,7 @@
 
     <!--PubNub-->
     <script src="https://cdn.pubnub.com/pubnub-3.14.5.min.js"></script>
-    
+
     <!--Font Awesome-->
       <script src="https://use.fontawesome.com/35910ef9c1.js"></script>
 
@@ -51,11 +51,11 @@
     <!--Main Nav Bar-->
     <nav>
       <div class="nav-wrapper">
-        <a ui-sref="control" class="brand-logo"><i class="material-icons">wb_sunny</i>Shine</a>
+        <a ui-sref="splash" class="brand-logo">Shine</a>
         <ul class="right hide-on-med-and-down">
+          <li><a ui-sref="control"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a></li>
           <li><a ui-sref="learn"><i class="material-icons">extension</i></a></li>
           <li><a ui-sref="profile"><i class="material-icons">face</i></a></li>
-          <li><a ui-sref="splash">Splash</a></li>
         </ul>
 
         <!--Slide Out Navigation-->
@@ -68,6 +68,8 @@
           <a href="#!name"><span class="white-text name">John Doe</span></a>
           <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
         </div></li> -->
+
+          <li><a ui-sref="control"><i class="fa fa-eye fa-2x" aria-hidden="true"></i>EMDR</a></li>
 
           <li><a ui-sref="learn"><i class="material-icons">extension</i>Learn</a></li>
 
