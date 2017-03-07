@@ -3,7 +3,7 @@
 // console.log('app.config connected!');
 
   angular
-    .module('app', [ 'ui.router', 'splash.component', 'login.component', 'logout.component', 'control.component','learn.component' , 'profile.component'])
+    .module('app', [ 'ui.router', 'splash.component', 'login.component', 'signup.component', 'control.component','learn.component' , 'profile.component'])
     .config(config);
 
   config.$inject = ['$stateProvider' , '$urlRouterProvider', '$locationProvider'];
@@ -24,9 +24,9 @@
         component: 'login'
       })
       .state({
-        name: 'logout',
-        url: '/logout',
-        component: 'logout'
+        name: 'signup',
+        url: '/signup',
+        component: 'signup'
       })
       .state({
         name: 'control',

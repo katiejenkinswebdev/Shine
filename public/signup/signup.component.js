@@ -2,11 +2,11 @@
 'use strict';
 
 angular
-  .module('logout.component', ['ui.router'])
-  .component('logout' , {
+  .module('signup.component', ['ui.router'])
+  .component('signup' , {
     controller: Controller,
-    templateUrl: 'logout/logout.template.html',
-    styleUrls: 'css/logout.styles.css'
+    templateUrl: 'signup/signup.template.html',
+    styleUrls: 'css/signup.styles.css'
   });
 
   Controller.$inject = ['$http'];
@@ -17,7 +17,7 @@ angular
     vm.$onInit = onInit;
 
     function onInit(){
-      console.log("we made it to Logout Component onInit");
+      console.log("we made it to Sign Up Component onInit");
     }
   }
 }());
