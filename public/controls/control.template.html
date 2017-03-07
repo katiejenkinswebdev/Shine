@@ -1,47 +1,68 @@
 <div class="container">
     <div class = "row">
       <div class = "col s12">
-        <h1>SHINE</h1>
+        <h1>Let's get started...</h1>
     </div>
   </div>
 
   <div class = "row">
     <form name = "$ctrl.submitTreatment()" ng-submit = "$ctrl.submitTreatment($ctrl.event.seconds, $ctrl.event.rating)">
+
       <div class = "col s4">
-        <h5>Enter seconds:</h5>
-        <i class="material-icons prefix">mode_edit</i>
-        <label for = "seconds">Seconds</label>
-          <input
-            id= "seconds"
-            type = "text"
-            name = "seconds"
-            ng-model = "$ctrl.event.seconds">
+        <div class="card hoverable">
+         <div class="card-image waves-effect waves-block waves-light">
+         </div>
+         <div class="card-content">
+           <i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>
+           <span class="card-title activator grey-text text-darken-4">Enter Seconds<i class="material-icons right">more_vert</i></span>
+         </div>
+         <div class="card-reveal">
+           <span class="card-title grey-text text-darken-4">Enter Seconds<i class="material-icons right">close</i></span>
+           <i class="material-icons prefix">mode_edit</i>
+           <label for = "seconds">Seconds</label>
+             <input
+               id= "seconds"
+               type = "text"
+               name = "seconds"
+               ng-model = "$ctrl.event.seconds">
+         </div>
+         </div>
       </div>
 
       <div class = "col s4">
-        <h5>Rating 1 - 7:</h5>
-        <i class="material-icons prefix">mode_edit</i>
-        <label for = "rating">Rating</label>
-          <input
-            id= "rating"
-            type = "text"
-            name = "rating"
-            ng-model = "$ctrl.event.rating">
-      </div>
+        <div class="card hoverable">
+         <div class="card-image waves-effect waves-block waves-light">
+         </div>
+         <div class="card-content">
+           <i class="fa fa-smile-o fa-5x" aria-hidden="true"></i><i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
+           <span class="card-title activator grey-text text-darken-4">Rating 1 - 7<i class="material-icons right">more_vert</i></span>
+         </div>
+         <div class="card-reveal">
+           <span class="card-title grey-text text-darken-4">Rating 1 - 7<i class="material-icons right">close</i></span>
+           <i class="material-icons prefix">mode_edit</i>
+           <label for = "rating">Rating</label>
+             <input
+               id= "rating"
+               type = "text"
+               name = "rating"
+               ng-model = "$ctrl.event.rating">
+         </div>
+       </div>
+     </div>
 
       <div class = "col s2">
-        <button id = "start" ng-click = " $ctrl.startTreatment()">Start</button>
+        <button id = "start" ng-click = " $ctrl.startTreatment()"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></button>
       </div>
-  </form>
-  <div class = "col s2">
-    <button id = "stop" ng-click = "$ctrl.stopTreatment()">Stop</button>
+    </form>
+      <div class = "col s2">
+        <button id = "stop" ng-click = "$ctrl.stopTreatment()"><i class="fa fa-stop-circle-o fa-3x" aria-hidden="true"></i></button>
+      </div>
   </div>
-</div>
 
 <div class = "row">
   <div class = "col s12">
     <h1>Timer</h1>
-    <div>Display time here:</div>
+    <img src="/assets/geo.gif" alt = "geo_gif">
   </div>
   </div>
 </div><!--end of Container
