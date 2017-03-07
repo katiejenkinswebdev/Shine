@@ -1,0 +1,9 @@
+<div class = "container">
+  <form name = "logIn" ng-submit="$ctrl.logIn($ctrl.user.name, $ctrl.user.password)" method="POST">
+    <label for="name">Name:<input type="text" name="name" id="name" ng-model = "$ctrl.user.name"></label>
+    <br>
+    <label for="password">Password: <input type="password" name="password" id="password" ng-model = "$ctrl.user.password"></label>
+    <br>
+    <button>Log In</button>
+  </form>
+</div>

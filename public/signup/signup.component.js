@@ -19,18 +19,17 @@ angular
     vm.users = [];
 
     function onInit(){
-      console.log("we made it to Sign Up Component onInit");
+      // console.log("we made it to Sign Up Component onInit");
     }
 
     function submitSignup (name, password) {
-      console.log("Sign Up submitted");
-
+      // console.log("Sign Up function triggered");
       var user = {name:name , password:password};
-      console.log(user);
+      // console.log(user);
 
       $http.post('/api/users', user)
         .then(response => {
-          console.log(response.data);
+          // console.log(response.data);
           vm.users.push(user);
           delete vm.user;
         });
