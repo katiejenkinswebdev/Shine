@@ -10,7 +10,7 @@
 #timerModal {
     display: none; /* Hidden by default*/
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1200; /* Sit on top */
     left: 30%;
     top: 25%;
     /*margin-top: -50px;*/

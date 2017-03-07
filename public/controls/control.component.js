@@ -77,8 +77,8 @@ angular
         .then(response => {
           console.log(response.data);
           vm.treatments.push(treatment);
-          delete vm.treatment;
         });
+        delete vm.treatment;
     }
 
     function stopTreatment(){
