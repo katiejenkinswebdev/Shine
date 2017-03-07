@@ -4,6 +4,22 @@
   height: 500px;
 }
 
+#carousel1{
+  background-color: #94529c;
+}
+
+#carousel2{
+  background-color: #8ad07a;
+}
+
+#carousel3{
+  background-color: #ca7bb3;
+}
+
+#carousel4{
+  background-color: #5ad2c9;
+}
+
 .headers {
   color: gray;
 }
