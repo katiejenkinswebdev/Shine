@@ -27,28 +27,32 @@ router.post('/', (req,res,next) => {
   console.log("getting to users post route")
   const name = req.body.name;
   const password = req.body.password;
-  console.log(name, password);
+  console.log(name, 'prehashed :' + password);
 
+  var hash = bcrypt.hashSync(req.body.password, 8);
+  console.log(hash);
+  // res.send({name: req.body.name, hash: hash});
+  //
   // knex('users')
-    // .where({name: name})
-    // .then(function (results) {
-      // console.log(results);
-    //  	if (results.length === 0) {
-    //        knex('users')
-    //        .insert({
-    //            name: req.body.name,
-    //            hashed_password: hash
-    //        })
-    //        .then(function (result) {
-    //          res.send("User Created");
-    //        })
-    //        .catch(function (err) {
-    //          next(err);
-    //        });
-    //      } else {
-    //        res.status(400).send('User Already Exists');
-    //      }
-      //  });
+  //   .where({name: name})
+  //   .then(function (results) {
+  //     console.log(results);
+  //    	if (results.length === 0) {
+  //          knex('users')
+  //          .insert({
+  //              name: req.body.name,
+  //              hashed_password: hash
+  //          })
+  //          .then(function (result) {
+  //            res.send("User Created");
+  //          })
+  //          .catch(function (err) {
+  //            next(err);
+  //          });
+  //        } else {
+  //          res.status(400).send('User Already Exists');
+  //        }
+  //      });
  });
 
 // router.get('/:id' , (req, res, next) => {
