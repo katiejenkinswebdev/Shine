@@ -1,5 +1,5 @@
 <div class="container">
-    <div class = "row">
+    <div class = "row content">
       <div class = "col s12">
         <h1>Let's get started...</h1>
     </div>
@@ -7,15 +7,14 @@
 
   <!--Treatment Controls-->
   <div class = "row" id = "submitTreatmentSection">
-    <div >
       <form name = "$ctrl.submitTreatment()" ng-submit = "$ctrl.submitTreatment($ctrl.event.seconds, $ctrl.event.rating)">
 
-        <div class = "col s5">
-          <div class="card hoverable">
+        <div class = "col md4 s4">
+          <div class="card hoverable controlCards right">
            <div class="card-image waves-effect waves-block waves-light">
            </div>
            <!-- <div class="card-content"> -->
-             <span class="card-title activator grey-text text-darken-4"><i class="fa fa-clock-o fa-5x" aria-hidden="true"></i></span>
+             <span class="card-title activator grey-text text-darken-4"><i class="fa fa-clock-o fa-4x" aria-hidden="true"></i></span>
            <!-- </div> -->
            <div class="card-reveal">
              <span class="card-title grey-text text-darken-4">Enter Seconds<i class="material-icons right">close</i></span>
@@ -30,13 +29,13 @@
            </div>
         </div>
 
-       <div class = "col s5">
-          <div class="card hoverable">
+       <div class = "col md4 s4">
+          <div class="card hoverable controlCards left">
            <div class="card-image waves-effect waves-block waves-light">
            </div>
            <!-- <div class="card-content"> -->
 
-             <span class="card-title activator grey-text text-darken-4"><i class="fa fa-smile-o fa-5x" aria-hidden="true"></i><i class="fa fa-frown-o fa-5x" aria-hidden="true"></i></span>
+             <span class="card-title activator grey-text text-darken-4"><i class="fa fa-smile-o fa-4x" aria-hidden="true"></i><i class="fa fa-frown-o fa-4x" aria-hidden="true"></i></span>
            <!-- </div> -->
            <div class="card-reveal">
              <span class="card-title grey-text text-darken-4">Rating 1 - 7<i class="material-icons right">close</i></span>
@@ -51,8 +50,9 @@
          </div>
        </div>
 
-        <div class = "col s2">
-          <button class = "hoverable waves-effect waves-light" id = "start" ng-click = " $ctrl.startTreatment()"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></button>
+
+        <div class = "col md4 s4 center">
+          <button class = "card hoverable waves-effect waves-light" id = "start" ng-click = " $ctrl.startTreatment()"><i class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i></button>
 
         </div>
       </form>

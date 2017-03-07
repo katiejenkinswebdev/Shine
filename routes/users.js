@@ -55,21 +55,24 @@ router.post('/', (req,res,next) => {
        });
  });
 
- router.post('/', (req,res,next) => {
-   console.log("getting to users login post route");
-  //  if (!req.body.name || !req.body.password) {
-  //    res.sendStatus(400);
-  //  }
-
-  //  knex('users')
-  //  .where({username: req.body.username})
-  //  .first()
-  //  .then(function (result) => {
-  //    if (!result || !bcrypt.compareSync(req.body.password,result.password_hash)) {
-  //      res.sendStatus(401);
-  //    } else {
-  //    }
-  //  })
- });
+ // router.post('/', (req,res,next) => {
+ //   const name = req.body.name;
+ //   const password = req.body.password;
+ //   console.log("getting to users login post route");
+ //  //  if (!req.body.name || !req.body.password) {
+ //  //    res.sendStatus(400);
+ //  //  }
+ //
+ //   knex('users')
+ //   .where({name: name})
+ //   .first()
+ //   .then(function (result){
+ //     if (!result || !bcrypt.compareSync(req.body.password,result.password_hash)) {
+ //       res.sendStatus(401);
+ //     } else {
+ //       console.log('success');
+ //     }
+ //   });
+ // });
 
 module.exports = router;

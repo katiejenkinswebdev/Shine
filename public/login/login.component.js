@@ -25,7 +25,7 @@ angular
       console.log("logIn function triggered");
       var user = {name:name , password:password};
 
-      $http.post('/api/users', user)
+      $http.post('/api/users/login', user)
         .then(response => {
           // console.log(response.data);
           // vm.users.push(user);
