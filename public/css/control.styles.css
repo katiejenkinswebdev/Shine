@@ -13,8 +13,12 @@
 
 #start {
   /*height: 100%;*/
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 }
+
+/*#timerIcon {
+  margin-left: 25%;
+}*/
  /*The Modal (background) */
 #timerModal {
     display: none; /* Hidden by default*/
@@ -32,5 +36,11 @@
 }
 
 #submitTreatmentSection {
+  /*display: flex;*/
+  height: 50%;
+  width: 100%;
   background-color: gray;
+  /*opacity: .8;*/
+  /*align-items: center;*/
+  /*flex-direction: row;*/
 }
