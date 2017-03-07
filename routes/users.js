@@ -1,28 +1,55 @@
 'use strict';
 
+const bcrypt = require('bcrypt');
 const express = require('express');
 const router = express.Router();
-
 const knex = require('../knex');
+
+// var db = require('../knexfile.js')['development'];
+// var knex = require('../knex')(db);
 
 router.get ('/' , (req, res, next) => {
   // console.log('get users route connected!');
   // res.send('users get route is connected');
 
-  // knex('users')
-  //   .select ('id', 'name')
-  // .then((results) => {
-  //   res.send(results);
-  //   // console.log(results.data[0]);
-  // })
-  // .catch((err) => {
-  //   next(err);
-  // });
+  knex('users')
+    .select ('id', 'name')
+  .then((results) => {
+    res.send(results);
+    // console.log(results.data[0]);
+  })
+  .catch((err) => {
+    next(err);
+  });
 });
 
-// router.post('/', (req,res,next) => {
-//  res.send(req.body);
-//  });
+router.post('/', (req,res,next) => {
+  console.log("getting to users post route")
+  const name = req.body.name;
+  const password = req.body.password;
+  console.log(name, password);
+
+  // knex('users')
+    // .where({name: name})
+    // .then(function (results) {
+      // console.log(results);
+    //  	if (results.length === 0) {
+    //        knex('users')
+    //        .insert({
+    //            name: req.body.name,
+    //            hashed_password: hash
+    //        })
+    //        .then(function (result) {
+    //          res.send("User Created");
+    //        })
+    //        .catch(function (err) {
+    //          next(err);
+    //        });
+    //      } else {
+    //        res.status(400).send('User Already Exists');
+    //      }
+      //  });
+ });
 
 // router.get('/:id' , (req, res, next) => {
 //   // console.log('get by id connected');

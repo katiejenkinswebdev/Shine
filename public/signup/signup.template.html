@@ -1,9 +1,11 @@
 <div class = "container">
-  <form action="users" method="POST">
-    <label for="username">User Name:<input type="text" name="username" id="username"></label>
+  <form name = "ctrl.submitSignup()" ng-submit="$ctrl.submitSignup($ctrl.user.name, $ctrl.user.password)">
+    <label for="name">User Name:
+      <input type="text" name="name" id="name" ng-model="$ctrl.user.name"></label>
     <br>
-    <label for="password">Password: <input type="password" name="password" id="password"></label>
+    <label for="password">Password:
+      <input type="password" name="password" id="password" ng-model="$ctrl.user.password"></label>
     <br>
-    <button>Register</button>
+    <button type="submit">Sign Up</button>
   </form>
 </div>
