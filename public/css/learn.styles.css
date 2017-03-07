@@ -1,7 +1,14 @@
 .carousel{
+  /*padding: 30px;*/
   margin-bottom: 10%;
+  height: 500px;
 }
 
 .headers {
   color: gray;
 }
+
+/*#emdrImage{
+  height: 100px;
+  width: 400px;
+}*/
