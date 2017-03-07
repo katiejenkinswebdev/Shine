@@ -33,26 +33,28 @@ router.post('/', (req,res,next) => {
   console.log(hash);
   // res.send({name: req.body.name, hash: hash});
   //
-  // knex('users')
-  //   .where({name: name})
-  //   .then(function (results) {
-  //     console.log(results);
-  //    	if (results.length === 0) {
-  //          knex('users')
-  //          .insert({
-  //              name: req.body.name,
-  //              hashed_password: hash
-  //          })
-  //          .then(function (result) {
-  //            res.send("User Created");
-  //          })
-  //          .catch(function (err) {
-  //            next(err);
-  //          });
-  //        } else {
-  //          res.status(400).send('User Already Exists');
-  //        }
-  //      });
+  knex('users')
+    .where({name: name})
+    .then(function (results) {
+      console.log(results);
+     	if (results.length === 0) {
+        // console.log("length is 0!");
+           knex('users')
+           .insert({
+               name: name,
+               hashed_password: hash
+           })
+           .then(function (results) {
+             res.send("User Created");
+             console.log(results);
+           })
+           .catch(function (err) {
+             next(err);
+           });
+         } else {
+           res.status(400).send('User Already Exists');
+         }
+       });
  });
 
 // router.get('/:id' , (req, res, next) => {
