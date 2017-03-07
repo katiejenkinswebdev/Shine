@@ -20,9 +20,9 @@ router.get ('/' , (req, res, next) => {
   // });
 });
 
-router.post('/', (req,res,next) => {
- res.send(req.body);
- });
+// router.post('/', (req,res,next) => {
+//  res.send(req.body);
+//  });
 
 // router.get('/:id' , (req, res, next) => {
 //   // console.log('get by id connected');
