@@ -6,8 +6,8 @@ const router = express.Router();
 const knex = require('../knex');
 
 router.get ('/' , (req, res, next) => {
-  console.log('get users route connected!');
-  res.send('route is connected');
+  // console.log('get users route connected!');
+  // res.send('users get route is connected');
 
   // knex('users')
   //   .select ('id', 'name')

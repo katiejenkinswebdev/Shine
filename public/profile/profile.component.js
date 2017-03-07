@@ -29,7 +29,7 @@ angular
       $http.get('/api/users')
       .then(results => {
         // console.log(results.data);
-        vm.treatments = results.data;
+        // vm.users = results.data;
         console.log(results.data);
       })
     }
