@@ -6,6 +6,10 @@
   font-size: 4em;
 }
 
+.controlIcons {
+  margin-top: 20%;
+}
+
 #submitTreatmentSection {
   /*display: flex;*/
   height: 25%;
@@ -25,9 +29,10 @@
 
 .fa {
   position: relative;
-  /*top: 25%;*/
-  left: 5%;
+}
 
+#start {
+  margin-top: 25%;
 }
 
 button {

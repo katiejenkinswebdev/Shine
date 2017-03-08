@@ -17,9 +17,9 @@ button {
   font-size: 2em;
   font-weight: 400;
   padding: .25em 1em .25em;
-  margin: 1em 0 0 1em;
+  /*margin-top: 5%;*/
   transition: all 20ms ease-out;
-  vertical-align: top;
+  /*vertical-align: top;*/
 }
 /*.button:hover, .button:focus {
   /*background: #f2f2f2;*/

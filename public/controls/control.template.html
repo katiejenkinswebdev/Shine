@@ -4,17 +4,25 @@
         <p class = "getStartedText">Let's get started...</p>
       </div>
       <div class = "col s4">
-        <p class = "getStartedText">Timer goes here.</p>
+        <div id="clockdiv">
+          <div>
+            <span id="secondsSpan"></span>
+            <div class="smalltext">Seconds</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </div><!--end row 1-->
+
 
   <!--Treatment Controls-->
   <div class = "row" id = "submitTreatmentSection">
-      <form novalidate name = "$ctrl.submitTreatmentForm" ng-submit = "$ctrl.submitTreatment($ctrl.event.seconds, $ctrl.event.rating)">
+    <form novalidate name = "$ctrl.submitTreatmentForm" ng-submit = "$ctrl.submitTreatment($ctrl.event.seconds, $ctrl.event.rating)">
 
-        <div class = "col md4 s4">
-          <div class="card hoverable controlCards right">
-             <span class="card-title activator grey-text text-darken-4"><i  id = "timerIcon" class="fa fa-clock-o fa-4x img-responsive" aria-hidden="true"></i></span>
+      <div class = "col md4 s4">
+        <div class="card hoverable controlCards right">
+          <div class = "center controlIcons">
+           <span class="card-title activator grey-text text-darken-4"><i  id = "timerIcon" class="fa fa-clock-o fa-4x img-responsive" aria-hidden="true"></i></span>
+         </div>
 
            <div class="card-reveal">
              <span class="card-title grey-text text-darken-4">Seconds<i class="material-icons right">close</i></span>
@@ -27,12 +35,14 @@
                  ng-model = "$ctrl.event.seconds">
            </div>
          </div>
-        </div>
+      </div>
 
        <div class = "col md4 s4">
           <div class="card hoverable controlCards right">
+            <div class = "center controlIcons">
 
              <span class="card-title activator grey-text text-darken-4"><i class="fa fa-smile-o fa-4x img-responsive" aria-hidden="true"></i><i class="fa fa-frown-o fa-4x img-responsive" aria-hidden="true"></i></span>
+           </div>
 
            <div class="card-reveal">
              <span class="card-title grey-text text-darken-4">Enter rating<i class="material-icons right">close</i></span>
@@ -44,29 +54,19 @@
                  ng-model = "$ctrl.event.rating">
            </div>
          </div>
-       </div>
+      </div>
 
+      <div class = "col md4 s4">
+        <div class = "card controlCards hoverable">
+          <div class = "center">
 
-        <div class = "col md4 s4">
-          <div class = "card controlCards hoverable">
-            <button  id = "start" ng-click = " $ctrl.startTreatment()"><i class="fa fa-play fa-4x" aria-hidden="true"></i></button>
+            <button id = "start" ng-click = " $ctrl.startTreatment()"><i  class="fa fa-play fa-4x img-responsive" aria-hidden="true"></i></button>
           </div>
         </div>
-
-      </form>
-    </div><!--end form div-->
-
-  <!-- </div><!--end of controls row-->
-
-  <div class = "row">
-      <div id="clockdiv">
-        <div>
-          <span id="secondsSpan"></span>
-          <div class="smalltext">Seconds</div>
-        </div>
       </div>
-    </div><!--Countdown Clock_-
 
+  </form>
+</div><!--end treatment controls row-->
 
   <!--Timer Modal-->
   <div>
