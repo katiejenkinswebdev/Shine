@@ -28,7 +28,6 @@ app.use(auth);
 const treatments = require('./routes/treatments');
 app.use('/api/treatments',treatments);
 
-
 //wildcard route
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
@@ -52,21 +51,16 @@ myBoard.on('ready', function() {
     channel: channel,
     message: function(message) {
       if(message.buzz === true) {
-        myBoard.wait(null, function(){
+        myBoard.wait(0, function(){
           buzzer1.pulse(750);
         });
         myBoard.wait(750, function(){
           buzzer2.pulse(750);
         });
-        //toggle for timer shutoff
-        // myBoard.wait(10000, function() {
-        //   buzzer1.stop().off();
-        //   buzzer2.stop().off();
-        // });
       } else {
         //toggle for off button
-          buzzer1.stop().off();
-          buzzer2.stop().off();
+        buzzer1.stop().off();
+        buzzer2.stop().off();
       }
     },
     error: function(err)

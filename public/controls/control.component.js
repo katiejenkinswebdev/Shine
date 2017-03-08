@@ -20,10 +20,10 @@ angular
     vm.stopTreatment = stopTreatment;
     vm.treatments = [];
     vm.showTimerModal = false;
-    vm.seconds = 0;
-    vm.updateClock = updateClock;
-    vm.clock = document.getElementById('#clockdiv');
-    vm.secondsSpan = document.getElementById('#secondsSpan');
+    // vm.seconds = 0;
+    // vm.updateClock = updateClock;
+    // vm.clock = document.getElementById('#clockdiv');
+    // vm.secondsSpan = document.getElementById('#secondsSpan');
 
     function onInit(){
       // console.log("we made it to Control Component onInit");
@@ -57,7 +57,7 @@ angular
         channel: channel,
         message: function(message) {
           buzzState = message.buzz; // raw data
-          buzzState = true; // toggle to label button
+          // buzzState = true; // toggle to label button
           // startButton.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
           console.log('buzzState subscribe state ' , buzzState);
         }
@@ -93,32 +93,32 @@ angular
       // var clock = document.getElementById('#clockdiv');
       // var secondsSpan = document.getElementById('#secondsSpan');
 
-      function updateClock(seconds) {
-        console.log(seconds);
-        // var s = seconds;
-        // console.log(s);
-        // var t = milliSeconds;
-        // console.log('timer milliseconds ', t);
-        //
-        // // daysSpan.innerHTML = t.days;
-        // // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-        // // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-        // secondsSpan.innerHTML = ('0' + milliSeconds).slice(-2);
-        //
-        // if (t.total <= 0) {
-        //   clearInterval(timeinterval);
-        // }
-      }
-
-      // updateClock();
-      // var timeinterval = setInterval(updateClock, 1000);
-      // // }
-
-
+      // function updateClock(seconds) {
+      //   console.log(seconds);
+      //   // var s = seconds;
+      //   // console.log(s);
+      //   // var t = milliSeconds;
+      //   // console.log('timer milliseconds ', t);
+      //   //
+      //   // // daysSpan.innerHTML = t.days;
+      //   // // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      //   // // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      //   // secondsSpan.innerHTML = ('0' + milliSeconds).slice(-2);
+      //   //
+      //   // if (t.total <= 0) {
+      //   //   clearInterval(timeinterval);
+      //   // }
+      // }
       //
-      // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-      // initializeClock('clockdiv', deadline);
-
+      // // updateClock();
+      // // var timeinterval = setInterval(updateClock, 1000);
+      // // // }
+      //
+      //
+      // //
+      // // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+      // // initializeClock('clockdiv', deadline);
+      //
 
       $http.post('/api/treatments', treatment)
         .then(response => {
@@ -153,7 +153,7 @@ angular
        channel: channel,
        message: function(message) {
          buzzState = message.buzz; // raw data
-         buzzState = buzzState; // toggle to label button
+        //  buzzState = buzzState; // toggle to label button
         //  stopButton.textContent = 'Buzzers On';
          console.log('stop subscribe state ' , buzzState);
        }
