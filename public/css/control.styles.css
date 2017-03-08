@@ -2,9 +2,13 @@
   min-height: 550px;
 }
 
+.getStartedText{
+  font-size: 4em;
+}
+
 #submitTreatmentSection {
   /*display: flex;*/
-  height: 50%;
+  height: 25%;
   width: 100%;
   background-color: rgba(89,90,131,.8)
   /*opacity: .8;*/
@@ -16,8 +20,15 @@
   min-height: 30vh;
   height: auto;
   width: 100%;
+  position: absolute;
 }
 
+.fa {
+  position: relative;
+  /*top: 25%;*/
+  left: 5%;
+
+}
 
 button {
   background-color: rgba(97,97,97 ,1);
