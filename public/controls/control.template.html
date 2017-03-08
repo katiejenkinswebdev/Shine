@@ -7,7 +7,7 @@
 
   <!--Treatment Controls-->
   <div class = "row" id = "submitTreatmentSection">
-      <form name = "$ctrl.submitTreatment()" ng-submit = "$ctrl.submitTreatment($ctrl.event.seconds, $ctrl.event.rating)">
+      <form novalidate name = "$ctrl.submitTreatmentForm" ng-submit = "$ctrl.submitTreatment($ctrl.event.seconds, $ctrl.event.rating)">
 
         <div class = "col md4 s4">
           <div class="card hoverable controlCards right">
@@ -64,7 +64,7 @@
     <h1>Countdown Clock</h1>
       <div id="clockdiv">
         <div>
-          <span class="seconds"></span>
+          <span id="secondsSpan"></span>
           <div class="smalltext">Seconds</div>
         </div>
       </div>
@@ -76,7 +76,7 @@
     <div id ="timerModal">
       <div class = "row">
         <div class = "col s1">
-          <img id = "geoGif" src="/assets/geo.gif" alt = "geo_gif">
+          <img class = "img-responsive" id = "geoGif" src="/assets/geo.gif" alt = "geo_gif">
           <button class = "hoverable" id = "stop" ng-click = "$ctrl.stopTreatment()"><i class="fa fa-stop-circle-o fa-3x" aria-hidden="true"></i></button>
           </div>
         </div>

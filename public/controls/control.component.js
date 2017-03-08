@@ -21,6 +21,9 @@ angular
     vm.treatments = [];
     vm.showTimerModal = false;
     vm.seconds = 0;
+    vm.updateClock = updateClock;
+    vm.clock = document.getElementById('#clockdiv');
+    vm.secondsSpan = document.getElementById('#secondsSpan');
 
     function onInit(){
       // console.log("we made it to Control Component onInit");
@@ -70,65 +73,52 @@ angular
     }
 
     function submitTreatment (seconds, rating) {
-      console.log("submit treatment triggered");
+      // console.log("submit treatment triggered");
 
       var treatment = {seconds:seconds, rating:rating};
-      // console.log('treatment ' ,treatment);
+      console.log('treatment ' ,treatment);
 
+      //change seconds to milliseconds for timeout delay
       var milliSeconds = seconds * 1000;
       console.log(milliSeconds);
 
-      // function getTimeRemaining(seconds) {
-      //   console.log('seconds getTimeRemaining ' , seconds);
-      //   var t = Date.parse(seconds) - Date.parse(new Date());
-      //   console.log(new Date());
-      //   console.log('t ', t);
-      //   var seconds = Math.floor((t / 1000) % 60);
-      //   console.log(seconds);
-      //   // var minutes = Math.floor((t / 1000 / 60) % 60);
-      //   // var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-      //   // var days = Math.floor(t / (1000 * 60 * 60 * 24));
-      //   return {
-      //     'total': t,
-      //   //   'days': days,
-      //   //   'hours': hours,
-      //   //   'minutes': minutes,
-      //     'seconds': seconds
-      //   };
-      // }
-      //
-      // function initializeClock(id, seconds) {
-      //   console.log('initializeClock seconds ', seconds);
-      //   var clock = document.getElementById(id);
-      //   // var daysSpan = clock.querySelector('.days');
-      //   // var hoursSpan = clock.querySelector('.hours');
-      //   // var minutesSpan = clock.querySelector('.minutes');
-      //   var secondsSpan = clock.querySelector('.seconds');
-      //   // console.log('secondsSpan ' , secondsSpan);
-      //
-      //   function updateClock() {
-      //     var t = getTimeRemaining(seconds);
-      //     console.log(t);
-      //     //
-      //     // // daysSpan.innerHTML = t.days;
-      //     // // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      //     // // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      //     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-      //     //
-      //     if (t.total <= 0) {
-      //       clearInterval(timeinterval);
-      //     }
-      //   }
-      //
-      //   updateClock();
-      //   var timeinterval = setInterval(updateClock, 1000);
-      // }
+      //set timeout to trigger stop function
+      setTimeout(stopTreatment, milliSeconds);
+
+      //TODO Clear out form on submit and set as untouched
+      // delete vm.treatment;
+      // vm.submitTreatmentForm.$setPristine();
+      // vm.submitTreatmentForm.$setUntouched();
+
+      // var clock = document.getElementById('#clockdiv');
+      // var secondsSpan = document.getElementById('#secondsSpan');
+
+      function updateClock(seconds) {
+        console.log(seconds);
+        // var s = seconds;
+        // console.log(s);
+        // var t = milliSeconds;
+        // console.log('timer milliseconds ', t);
+        //
+        // // daysSpan.innerHTML = t.days;
+        // // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        // // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        // secondsSpan.innerHTML = ('0' + milliSeconds).slice(-2);
+        //
+        // if (t.total <= 0) {
+        //   clearInterval(timeinterval);
+        // }
+      }
+
+      // updateClock();
+      // var timeinterval = setInterval(updateClock, 1000);
+      // // }
+
+
       //
       // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
       // initializeClock('clockdiv', deadline);
 
-      setTimeout(stopTreatment, milliSeconds);
-      console.log("set timeout activated");
 
       $http.post('/api/treatments', treatment)
         .then(response => {
@@ -156,7 +146,7 @@ angular
       //  console.log(stopButton);
 
        let buzzState = false;
-       console.log('buzzState stop ', buzzState);
+      //  console.log('buzzState stop ', buzzState);
 
      // Subscribe data from all subscribers of the channel to set the button state correctly//
      pubnub.subscribe({
@@ -176,9 +166,6 @@ angular
            console.log(message);
          }
      });
-    }
-    // function showTimerModal() {
-    //
-    // }
+   }//end stopTreatment
   }//end of Controller
 }()); //end of Controller
