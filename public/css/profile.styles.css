@@ -20,5 +20,12 @@
   /*padding-left: 10px;*/
   padding: 0 30px 0 30px;
   color: rgba(224,224,224 ,1);
+}
 
+#loves {
+  font-size: 1em;
+}
+
+#location {
+  font-size: 1em;
 }
