@@ -1,12 +1,6 @@
-/*#splash {
-  height: 100%;
-  width: auto;
-}*/
 #splashContainer{
   min-height: 550px;
   width: auto;
-  /*background-color: white;*/
-  /*margin: auto;*/
 }
 
 #splashImage {
@@ -15,25 +9,14 @@
   /*position: relative;*/
 }
 
-#imageRow {
-  margin-top: 20px;
-  background-color: rgba(176,190,197 ,.3);
-}
-
 p {
-  font-size: 8em;
+  font-size: 10vw;
 }
-/*#shineEye {
-  top: 212px;
-  right: 685px;
-  position: absolute;
-  z-index: 1;
-  opacity: .9;
-  color: rgba(128,222,234 ,1);
-}*/
 
 #splash {
   color: #502b3f;
+  margin-top: 5%;
+  background-color: rgba(176,190,197 ,.3);
 }
 
 #logIn {
