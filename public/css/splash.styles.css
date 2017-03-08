@@ -3,27 +3,33 @@
   width: auto;
 }*/
 #splashContainer{
-  min-height: 500px;
+  min-height: 550px;
   width: auto;
   /*margin: auto;*/
 }
 
 #splashImage {
-  height: 400px;
+  height: 25em;
   width: auto;
-  position: relative;
+  /*position: relative;*/
 }
 
-#shineEye {
-  top: 220px;
+#imageRow {
+  margin-top: 20px;
+  background-color: rgba(176,190,197 ,.3);
+}
+
+/*#shineEye {
+  top: 212px;
   right: 685px;
   position: absolute;
   z-index: 1;
   opacity: .9;
-}
+  color: rgba(128,222,234 ,1);
+}*/
 
 #splash {
-  color: rgba(238,238,238 ,1);
+  color: #502b3f;
 }
 
 #logIn {
