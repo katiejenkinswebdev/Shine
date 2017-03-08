@@ -11,14 +11,11 @@
 
         <div class = "col md4 s4">
           <div class="card hoverable controlCards right">
-           <div class="card-image waves-effect waves-block waves-light">
-           </div>
-           <!-- <div class="card-content"> -->
-             <span class="card-title activator grey-text text-darken-4">Enter Treatment Length<i  id = "timerIcon" class="fa fa-clock-o fa-4x img-responsive" aria-hidden="true"></i></span>
-           <!-- </div> -->
+             <span class="card-title activator grey-text text-darken-4"><i  id = "timerIcon" class="fa fa-clock-o fa-4x img-responsive" aria-hidden="true"></i></span>
+
            <div class="card-reveal">
              <span class="card-title grey-text text-darken-4">Seconds<i class="material-icons right">close</i></span>
-             <!-- <i class="material-icons prefix">mode_edit</i> -->
+
                <input
                  id= "seconds"
                  type = "text"
@@ -26,20 +23,16 @@
                  placeholder="seconds"
                  ng-model = "$ctrl.event.seconds">
            </div>
-           </div>
+         </div>
         </div>
 
        <div class = "col md4 s4">
           <div class="card hoverable controlCards right">
-           <div class="card-image waves-effect waves-block waves-light">
-           </div>
-           <!-- <div class="card-content"> -->
 
-             <span class="card-title activator grey-text text-darken-4">Enter Distress Level<br><i class="fa fa-smile-o fa-4x img-responsive" aria-hidden="true"></i><i class="fa fa-frown-o fa-4x img-responsive" aria-hidden="true"></i></span>
-           <!-- </div> -->
+             <span class="card-title activator grey-text text-darken-4"><i class="fa fa-smile-o fa-4x img-responsive" aria-hidden="true"></i><i class="fa fa-frown-o fa-4x img-responsive" aria-hidden="true"></i></span>
+
            <div class="card-reveal">
              <span class="card-title grey-text text-darken-4">Enter rating<i class="material-icons right">close</i></span>
-             <!-- <i class="material-icons prefix">mode_edit</i> -->
                <input
                  id= "rating"
                  type = "text"
@@ -51,10 +44,12 @@
        </div>
 
 
-        <div class = "col md4 s4 center">
-          <button class = "card hoverable" id = "start" ng-click = " $ctrl.startTreatment()"><i class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i></button>
-
+        <div class = "col md4 s4">
+          <div class = "card controlCards hoverable">
+            <button  id = "start" ng-click = " $ctrl.startTreatment()"><i class="fa fa-play fa-4x" aria-hidden="true"></i></button>
+          </div>
         </div>
+
       </form>
     </div><!--end form div-->
 

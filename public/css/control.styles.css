@@ -2,6 +2,28 @@
   min-height: 550px;
 }
 
+#submitTreatmentSection {
+  /*display: flex;*/
+  height: 50%;
+  width: 100%;
+  background-color: rgba(89,90,131,.8)
+  /*opacity: .8;*/
+  /*align-items: center;*/
+  /*flex-direction: row;*/
+}
+
+.controlCards {
+  min-height: 30vh;
+  height: auto;
+  width: 100%;
+}
+
+
+button {
+  background-color: rgba(97,97,97 ,1);
+  border: none;
+}
+
 #geoGif {
   height: 25em;
   width: 25em;
@@ -10,19 +32,6 @@
   margin: auto;
 }
 
-.controlCards {
-  height: 100%;
-  width: 100%;
-}
-
-#start {
-  /*height: 100%;*/
-  margin-top: 3rem;
-}
-
-/*#timerIcon {
-  margin-left: 25%;
-}*/
  /*The Modal (background) */
 #timerModal {
     display: none; /* Hidden by default*/
@@ -39,15 +48,6 @@
     background-color: rgba(255,255,255,1); /* Black w/ opacity*/
 }
 
-#submitTreatmentSection {
-  /*display: flex;*/
-  height: 50%;
-  width: 100%;
-  background-color: rgba(89,90,131,.8)
-  /*opacity: .8;*/
-  /*align-items: center;*/
-  /*flex-direction: row;*/
-}
 
 
 #clockdiv{
