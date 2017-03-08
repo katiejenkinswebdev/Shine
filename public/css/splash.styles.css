@@ -5,12 +5,13 @@
 #splashContainer{
   min-height: 550px;
   width: auto;
+  /*background-color: white;*/
   /*margin: auto;*/
 }
 
 #splashImage {
-  height: 25em;
-  width: auto;
+  /*height: 25em;*/
+  /*width: auto;*/
   /*position: relative;*/
 }
 
@@ -19,6 +20,9 @@
   background-color: rgba(176,190,197 ,.3);
 }
 
+p {
+  font-size: 8em;
+}
 /*#shineEye {
   top: 212px;
   right: 685px;
