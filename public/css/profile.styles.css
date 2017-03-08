@@ -1,6 +1,7 @@
 #profilePic {
   height: 100%;
   width: 100%;
+  margin-top: 10px;
 }
 
 /*#aboutMe {
@@ -12,7 +13,7 @@
 }
 
 #aboutMe {
-  border: 1px dashed black;
+  /*border: 1px dashed black;*/
   height: auto;
   /*width: 100%;*/
   background-color: rgba(89,90,131,.8);
