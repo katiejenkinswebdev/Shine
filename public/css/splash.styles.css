@@ -2,15 +2,34 @@
   height: 100%;
   width: auto;
 }*/
+#splashContainer{
+  min-height: 500px;
+  width: auto;
+  /*margin: auto;*/
+}
+
+#splashImage {
+  height: 400px;
+  width: auto;
+  position: relative;
+}
+
+#shineEye {
+  top: 220px;
+  right: 685px;
+  position: absolute;
+  z-index: 1;
+  opacity: .9;
+}
 
 #splash {
-  height: 20ems;
-  width: 100%;
-  margin-top: 50px;
-  opacity: .8;
-  box-shadow: 10px 10px 10px #888888;
+  color: rgba(238,238,238 ,1);
 }
 
 #logIn {
   float: right;
+}
+
+#signUp {
+  float: left;
 }
