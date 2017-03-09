@@ -11,13 +11,9 @@
 }
 
 #submitTreatmentSection {
-  /*display: flex;*/
   height: 25%;
   width: 100%;
   background-color: rgba(89,90,131,.8)
-  /*opacity: .8;*/
-  /*align-items: center;*/
-  /*flex-direction: row;*/
 }
 
 .controlCards {
@@ -36,14 +32,17 @@
 }
 
 button {
-  background-color: rgba(97,97,97 ,1);
+  background-color: rgba(142,147,151,1);
   border: none;
+}
+
+.controlIcon {
+  color: #68dbe2;
 }
 
 #geoGif {
   height: 25em;
   width: 25em;
-  /*text-align: center;*/
   display: block;
   margin: auto;
 }
@@ -65,8 +64,8 @@ button {
 }
 
 
-
-#clockdiv{
+/*TIMER MODAL*/
+/*#clockdiv{
 	font-family: sans-serif;
 	color: #fff;
 	display: inline-block;
@@ -92,4 +91,4 @@ button {
 .smalltext{
 	padding-top: 5px;
 	font-size: 16px;
-}
+}*/

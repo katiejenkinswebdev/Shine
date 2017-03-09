@@ -4510,7 +4510,7 @@ small {
   position: relative;
   margin: 2rem 0rem 2rem 0rem;
   /*background-color: #a9d98d;*/
-  background-color: rgba(97,97,97 ,1);
+  background-color: #8e9397;
   transition: box-shadow .25s;
   border-radius: 2px;
 }
