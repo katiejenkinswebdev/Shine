@@ -53,7 +53,7 @@ angular
         channel: channel,
         message: function(message) {
           buzzState = message.buzz; // raw data
-          // buzzState = true; // toggle to label button
+          buzzState = true; // toggle to label button
           // startButton.textContent = (buzzState) ? 'Buzzers On' : 'Stop Buzzers';
           console.log('buzzState subscribe state ' , buzzState);
         }
@@ -119,7 +119,7 @@ angular
        channel: channel,
        message: function(message) {
          buzzState = message.buzz; // raw data
-        //  buzzState = buzzState; // toggle to label button
+         buzzState = false; // toggle to label button
         //  stopButton.textContent = 'Buzzers On';
          console.log('stop subscribe state ' , buzzState);
        }

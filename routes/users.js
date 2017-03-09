@@ -5,11 +5,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
 
-// var db = require('../knexfile.js')['development'];
-// var knex = require('../knex')(db);
-
 router.get ('/' , (req, res, next) => {
-  // console.log('get users route connected!');
   // res.send('users get route is connected');
 
   knex('users')
