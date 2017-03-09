@@ -4,28 +4,29 @@
   margin-top: 10px;
 }
 
-/*#aboutMe {
-  padding-left: 30px;
-}*/
-
 .anchor{
   color: white;
 }
 
 #aboutMe {
-  /*border: 1px dashed black;*/
   height: auto;
-  /*width: 100%;*/
   background-color: rgba(89,90,131,.8);
-  /*padding-left: 10px;*/
   padding: 0 30px 0 30px;
   color: rgba(224,224,224 ,1);
 }
 
+#about1 {
+  margin-left: 20px;
+}
+
+#about2 {
+  margin-left: 20px;
+}
+
 #loves {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 #location {
-  font-size: 1em;
+  font-size: 1.5em;
 }
