@@ -1,3 +1,7 @@
+#learnContainer {
+  min-height: 600px;
+}
+
 .carousel{
   margin: 5% 0 5% 0;
   height: 500px;

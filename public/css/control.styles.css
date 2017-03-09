@@ -1,5 +1,5 @@
 #controlContainer {
-  min-height: 610px;
+  min-height: 670px;
 }
 
 .getStartedText{
@@ -63,5 +63,4 @@ button {
     height: 30em; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(255,255,255,1); /* Black w/ opacity*/
-
 }

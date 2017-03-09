@@ -1,7 +1,7 @@
 #profilePic {
   height: 100%;
   width: 100%;
-  margin-top: 10px;
+  margin: 10%;
 }
 
 .anchor{
@@ -9,18 +9,20 @@
 }
 
 #aboutMe {
-  height: 50%;
   background-color: rgba(89,90,131,.8);
-  padding: 0 30px 0 30px;
   color: rgba(224,224,224 ,1);
 }
 
+#moreInfo {
+  margin-top: 5%;
+}
+
 #about1 {
-  margin-left: 20px;
+  margin-left: 5%;
 }
 
 #about2 {
-  margin-left: 20px;
+  margin-left: 5%;
 }
 
 #loves {
