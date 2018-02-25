@@ -33,10 +33,6 @@
   font-size: 1.5em;
 }
 
-footer {
-  position: absolute;
-  left: 0 ;
-  right: 0;
-  bottom: 0;
-  height: 3.5em;
-}
+/* footer {
+  /* visibility: hidden; */
+/* } */
