@@ -1,5 +1,12 @@
-#controlContainer {
-  min-height: 670px;
+html {
+  height:100%;
+}
+
+body {
+  margin: 1em;
+  min-height: 100%;
+  padding-bottom: 3.5em;
+  background-color: blue;
 }
 
 .getStartedText{
@@ -63,4 +70,13 @@ button {
     height: 30em; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(255,255,255,1); /* Black w/ opacity*/
+}
+
+footer {
+  position: absolute;
+  left: 0 ;
+  right: 0;
+  bottom: 0;
+  height: 6.5em;
+  background-color: purple;
 }

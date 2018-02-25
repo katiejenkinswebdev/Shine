@@ -19,3 +19,11 @@ p {
 #signUp {
   float: left;
 }
+
+footer {
+  position: absolute;
+  left: 0 ;
+  right: 0;
+  bottom: 0;
+  height: 3.5em;
+}

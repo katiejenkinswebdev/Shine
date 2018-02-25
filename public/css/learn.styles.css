@@ -1,5 +1,12 @@
-#learnContainer {
-  min-height: 600px;
+html {
+  height:100%;
+}
+
+body {
+  margin: 1em;
+  min-height: 100%;
+  padding-bottom: 3.5em;
+  background-color: blue;
 }
 
 .carousel{
@@ -25,4 +32,12 @@
 
 .headers {
   color: gray;
+}
+
+footer {
+  position: absolute;
+  left: 0 ;
+  right: 0;
+  bottom: 0;
+  height: 3.5em;
 }
